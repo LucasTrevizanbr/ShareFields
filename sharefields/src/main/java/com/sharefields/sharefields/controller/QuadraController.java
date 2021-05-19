@@ -30,6 +30,12 @@ public class QuadraController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/modalidade/{modalidade}")
+    public ResponseEntity<List<Quadra>> buscarPorModalidade(String modalidade){
+
+        return ResponseEntity.ok(repository.findAllByModalidadeContainingIgnoreCase(modalidade));
+    }
+
     @PostMapping
     public ResponseEntity<Quadra> criarQuadra(@RequestBody Quadra quadra){
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(quadra));

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface QuadraRepository extends JpaRepository<Quadra, Long> {
 
-    public List<Quadra> findAllByNomeContainingIgnoreCase(String nome);
+    public List<Quadra> findAllByModalidadeContainingIgnoreCase(String modalidade);
 }

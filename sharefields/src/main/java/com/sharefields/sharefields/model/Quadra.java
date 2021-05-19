@@ -32,10 +32,6 @@ public class Quadra {
     @Size(min = 5, max = 2000)
     private String descricao;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JsonIgnoreProperties({"quadra"})
-    private EnderecoQuadra endereco;
-
     @ManyToOne
     @JsonIgnoreProperties({"senha","email","quadrasDoUsuario","usaQuadras"})
     private Usuario proprietarioQuadra;
@@ -44,14 +40,21 @@ public class Quadra {
     @JsonIgnoreProperties("quadra")
     private List<InfoQuadra> infoQuadra;
 
+    private int cep;
 
-    public EnderecoQuadra getEndereco() {
-        return endereco;
-    }
+    private String rua;
 
-    public void setEndereco(EnderecoQuadra endereco) {
-        this.endereco = endereco;
-    }
+    private int numero;
+
+    private String complemento;
+
+    private String bairro;
+
+    private String cidade;
+
+    private String uf;
+
+    private String referencia;
 
     public Long getId() {
         return id;
@@ -75,6 +78,14 @@ public class Quadra {
 
     public void setImagem(String imagem) {
         this.imagem = imagem;
+    }
+
+    public String getModalidade() {
+        return modalidade;
+    }
+
+    public void setModalidade(String modalidade) {
+        this.modalidade = modalidade;
     }
 
     public int getQtdJogadoresMax() {
@@ -107,5 +118,69 @@ public class Quadra {
 
     public void setInfoQuadra(List<InfoQuadra> infoQuadra) {
         this.infoQuadra = infoQuadra;
+    }
+
+    public int getCep() {
+        return cep;
+    }
+
+    public void setCep(int cep) {
+        this.cep = cep;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
     }
 }

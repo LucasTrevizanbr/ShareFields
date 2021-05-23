@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,12 +22,13 @@ public class InfoQuadra {
     @JsonIgnoreProperties({"infoQuadra","endereco"})
     private Quadra quadra;
 
-    private boolean disponivel;
-
+    @NotNull
     private String dataDisponivel;
 
+    @NotNull
     private String horaInicio;
 
+    @NotNull
     private String horaFim;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -50,14 +52,6 @@ public class InfoQuadra {
 
     public void setQuadra(Quadra quadra) {
         this.quadra = quadra;
-    }
-
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
     }
 
     public String getDataDisponivel() {

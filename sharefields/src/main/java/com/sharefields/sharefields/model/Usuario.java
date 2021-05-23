@@ -32,11 +32,10 @@ public class Usuario {
     private String apelido;
 
     @NotNull
-    @Size(min = 5, max = 100)
     private String email;
 
     @NotNull
-    @Size(min = 8, max = 100)
+    @Size(min = 8, max = 50)
     private String senha;
 
     @OneToMany(mappedBy = "proprietarioQuadra", cascade = CascadeType.ALL)

@@ -44,7 +44,6 @@ public class InfoQuadraService {
 
             return infoQuadraRepository.save(informacaoDaQuadraExistente.get());
         }
-
         return null;
     }
 

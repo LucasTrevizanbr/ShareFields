@@ -17,9 +17,10 @@ public class Quadra {
     private Long id;
 
     @NotNull
-    @Size(min = 5, max = 50)
+    @Size(min = 3, max = 50)
     private String nome;
 
+    @NotNull
     private String imagem;
 
     @NotNull
@@ -40,18 +41,25 @@ public class Quadra {
     @JsonIgnoreProperties("quadra")
     private List<InfoQuadra> infoQuadra;
 
+    @NotNull
     private int cep;
 
+    @NotNull
     private String rua;
 
+    @NotNull
     private int numero;
 
     private String complemento;
 
+    @NotNull
     private String bairro;
 
+    @NotNull
     private String cidade;
 
+    @NotNull
+    @Size(min = 2, max = 2)
     private String uf;
 
     private String referencia;

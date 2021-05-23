@@ -31,9 +31,22 @@ public class QuadraController {
     }
 
     @GetMapping("/modalidade/{modalidade}")
-    public ResponseEntity<List<Quadra>> buscarPorModalidade(String modalidade){
+    public ResponseEntity<List<Quadra>> buscarPorModalidade(@PathVariable String modalidade){
 
         return ResponseEntity.ok(repository.findAllByModalidadeContainingIgnoreCase(modalidade));
+    }
+
+    @GetMapping("/cidade/{cidade}")
+    public  ResponseEntity<List<Quadra>> buscarPorCidade(@PathVariable String cidade){
+
+        return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(cidade));
+    }
+
+
+    @GetMapping("/nome/{nome}")
+    public  ResponseEntity<List<Quadra>> buscarPorNome(@PathVariable String nome){
+
+        return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(nome));
     }
 
     @PostMapping

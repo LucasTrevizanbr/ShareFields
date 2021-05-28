@@ -1,0 +1,12 @@
+.footer-style{
+    border-top: solid 2px #7678b8;
+    background-color:#000485 ;
+    font-family: bebas neue ;
+    color: #42ce81;
+}
+
+.footer-style img{
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}

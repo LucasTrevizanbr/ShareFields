@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: bebas neue;
+    src: url(assets/BebasNeue-Regular.otf);
+}
+
+.default-style{
+    background-color:  #000238;
+    font-family: bebas neue ;
+    color: white;
+}

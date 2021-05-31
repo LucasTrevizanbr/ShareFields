@@ -1,0 +1,32 @@
+.form-style{
+    border: double 4px #42ce81;
+    padding: 20px;
+    color: #7678b8;
+    background-color: #00042b;
+    border-radius: 10%;
+}
+
+.form-style input{
+    margin-bottom: 10px; ;
+}
+
+.form-style button{
+    background-color:#42ce81 ;
+    color: white;
+}
+
+
+
+.cadastro-default-style{
+    background-image: linear-gradient(to right, #000238,#00046b);
+    font-family: bebas neue ;
+    color: white;
+}
+
+.central-col{
+    background-color: #000485;
+}
+
+h1{
+    color: #42ce81;
+}

@@ -1,0 +1,13 @@
+.nav-style{
+    background-color: #1C0C3F;
+    font-family: bebas neue;
+    border-bottom: solid 1px #7678b8;
+}
+
+.nav-style a{
+    color: #42ce81;
+
+}
+.nav-style a:hover{
+    color: #7678b8;
+}

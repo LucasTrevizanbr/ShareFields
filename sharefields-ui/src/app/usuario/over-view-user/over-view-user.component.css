@@ -1,0 +1,23 @@
+.card-style{
+    padding: 15px;
+    background-color: #7678b8;
+    color: #1C0C3F;
+    font-family: bebas neue;
+}
+
+.card-style ul li img{
+    margin-right: 30px;
+}
+
+.card-style ul li{
+    background-color: #7678b8;
+    color: #1C0C3F;
+}
+
+.card-style ul li:hover{
+    cursor: pointer;
+    background-color: #1C0C3F;
+    color:#7678b8 ;
+
+}
+

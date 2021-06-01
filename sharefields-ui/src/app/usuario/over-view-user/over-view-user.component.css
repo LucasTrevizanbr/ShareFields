@@ -1,22 +1,24 @@
 .card-style{
     padding: 15px;
-    background-color: #7678b8;
-    color: #1C0C3F;
+    background-color:#1C0C3F;
+    color: #7678b8;
     font-family: bebas neue;
+    border: solid 2px #005C0E;
 }
 
 .card-style ul li img{
     margin-right: 30px;
+    
 }
 
 .card-style ul li{
-    background-color: #7678b8;
-    color: #1C0C3F;
+    background-color:#1C0C3F ;
+    color: #7678b8;
 }
 
 .card-style ul li:hover{
     cursor: pointer;
-    background-color: #1C0C3F;
+    background-color: #005C0E;
     color:#7678b8 ;
 
 }

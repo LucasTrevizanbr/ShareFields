@@ -6,7 +6,8 @@
 }
 
 .default-style{
-    background-image: linear-gradient(to right, #000238,#00046b);
+    background-image: linear-gradient(to right, #541C8C,#360259);
+    /*background-color: #9993BF;*/
     font-family: bebas neue ;
     color: white;
 }

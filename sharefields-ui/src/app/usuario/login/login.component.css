@@ -1,8 +1,8 @@
 .login-form{
-    border: solid 10px #42ce81;
+    border: solid 8px #42ce81;
     padding: 50px;
     border-radius: 50%;
-    background-color: #000485;
+    background-color: #1C0C3F;
 }
 
 .login-form label{

@@ -1,0 +1,74 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 align-self-start">
+                <app-over-view-user></app-over-view-user>
+            </div>
+
+            <div class="col-md-8 side-border-right side-border-left">
+                <div class="row mt-5 mb-4">
+                    <div class="col-md-12">
+                        <h2 class="titulo-pesquisa">Procurar quadras</h2>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-todasQuadras" type="button" role="tab" aria-controls="nav-todasQuadras" aria-selected="true">Todas as Quadras</button>
+
+                              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-modalidade" type="button" role="tab" aria-controls="nav-modalidade" aria-selected="false">Por Modalidade</button>
+
+                              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-cidade" type="button" role="tab" aria-controls="nav-cidade" aria-selected="false">Por Cidade</button>
+
+                            </div>
+                        </nav>
+                    </div>
+                </div>  
+
+                <div class="row d-flex mb-5">
+
+                        <div class="tab-content" id="nav-tabContent">
+                              
+                                <div class="tab-pane fade show active" id="nav-todasQuadras" role="tabpanel" aria-labelledby="nav-todasQuadras">
+                                    <div class="card-group w-100">
+                                        <div class="col-md-4" *ngFor="let item of quadras">
+                                            <div class="card cards-style">
+                                                <img class="card-img-top rounded-circle border" src="{{ item.urlImg }}" width="240" height="180">
+                                                <div class="card-body">
+                                                  <h5 class="card-title">{{ item.nome }}</h5>
+                                                  <p class="card-text">{{item.descricao}}</p>
+                                                  <p class="card-text"><small>{{ item.modalidade }}</small></p>
+                                                  <a href="#" class="btn btn-success">Detalhes</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="nav-modalidade" role="tabpanel" aria-labelledby="nav-modalidade">Modalidade
+        
+                                </div>
+        
+                                <div class="tab-pane fade" id="nav-cidade" role="tabpanel" aria-labelledby="nav-cidade">Cidade
+        
+        
+                                </div>
+    
+                        </div>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-1 align-self-start mt-4">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+
+
+    </div>
+</body>

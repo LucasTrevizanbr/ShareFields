@@ -6,18 +6,21 @@ import { AppComponent } from './app.component';
 
 import { UsuarioModule } from './usuario/usuario.module';
 import { RaizModule } from './raiz/raiz.module';
-import { ListagemQuadraComponent } from './listagem-quadra/listagem-quadra.component';
+import { QuadraModule } from './quadra/quadra.module';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListagemQuadraComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UsuarioModule,
-    RaizModule
+    RaizModule,
+    QuadraModule
   ],
   providers: [],
   bootstrap: [AppComponent]

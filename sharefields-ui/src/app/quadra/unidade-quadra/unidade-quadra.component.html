@@ -1,0 +1,79 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 align-self-center">
+                <app-over-view-user></app-over-view-user>
+            </div>
+            <div class="col-md-8 border-left border-right">
+                <div class="row mt-5 mb-3">
+                    <div class="col-md-12">
+                        <h1 class="text-center titulo-quadra">{{ quadra.nome }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <img [src]="quadra.img" class="img-fluid border" >
+                    </div>
+                    <div class="col-md-5 bg-columns">
+                        <div class="row">
+                            <div class="col-md-12 text-center horarios-style mb-1">
+                                <h5 class="mt-1">Horários da Quadra</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead class="thead-color" >
+                                      <tr>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Início</th>
+                                        <th scope="col">Término</th>
+                                        <th scope="col" class="d-flex justify-content-end">Participar</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="trow-color">
+                                        <th scope="row">23/08/2021</th>
+                                        <td>13:30</td>
+                                        <td>16:50</td>
+                                        <td class="d-flex justify-content-end">
+                                            <a class="btn btn-outline-info ">Participar</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                               </table>
+                               <button type="button" class="btn btn-outline-warning">Ver todos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4 mb-5">
+                    <div class="col-md-7 bg-columns">
+                        <div class="row mt-3">
+                            <div class="col-md-8">
+                                <h2>Rua: {{ quadra.rua }}</h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h2>Número: {{ quadra.numero }}</h2>
+                            </div>   
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-7">
+                                <h2>Bairro: {{ quadra.bairro }}</h2>
+                            </div>
+                            <div class="col-md-5">
+                                <h2>Cidade: {{ quadra.cidade }}</h2>  
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="col-md-5 bg-columns ">
+                        <p>{{ quadra.descricao }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 align-self-center">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div>     
+    </div>  
+</body>

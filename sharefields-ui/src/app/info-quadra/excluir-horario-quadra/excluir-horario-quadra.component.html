@@ -1,0 +1,38 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-5  align-self-center ">
+                <app-over-view-user></app-over-view-user>
+            </div>     
+            <div class="col-md-8 border-left border-right">
+                <div class="row mt-5 d-flex justify-content-center">
+                    <div class="col-md-8 box-title-style">
+                        <h4>Jogadores Participando</h4>
+                    </div>
+                </div>
+                <div class="row mt-2 d-flex justify-content-center">
+                    <div class="col-md-8 box-player-style p-2" *ngFor="let item of jogadores">
+                        <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
+                    </div>  
+                </div> 
+                <div class="row d-flex justify-content-center mt-5 mb-5">
+                    <div class="col-md-8">
+                        <h3 class="title-confirm-style">Quer mesmo excluir esse horário?</h3>
+                        <button type="button" class="btn btn-outline-info botao">Confirmar</button>
+                        <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                    </div>  
+                </div>
+            </div>
+            <div class="col-md-1 mt-5 align-self-start mt-4">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+</body>
+

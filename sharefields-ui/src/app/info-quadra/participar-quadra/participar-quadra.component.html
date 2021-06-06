@@ -1,0 +1,58 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 align-self-start">
+                <app-over-view-user></app-over-view-user>
+            </div>
+            <div class="col-md-5 border-left">
+                <div class="row mt-5 mb-3 d-flex justify-content-center">
+                    <div class="col-md-8 box-title-style">
+                        <h3>Jogadores Participando</h3>
+                    </div>
+                    <div class="col-md-2 box-title-style">
+                        <h3>3/4</h3>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-2">
+                        <div class="col-md-10 box-player-style p-2" *ngFor="let item of jogadores">
+                            <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
+                        </div>  
+                    </div>
+                    <div class="row d-flex justify-content-center mt-2 mb-5">
+                        <div class="col-md-4 box-player-style p-1">
+                            <h5>Data:</h5>
+                        </div>
+                        <div class="col-md-3 box-player-style p-1">
+                            <h5>Início:</h5>                           
+                        </div>
+                        <div class="col-md-3 box-player-style p-1">
+                            <h5>Até:</h5>                          
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-5 mb-5">
+                        <div class="col-md-10">
+                            <h3 class="title-confirm-style">Confirmar Participação?</h3>
+                            <button type="button" class="btn btn-outline-info botao">Confirmar</button>
+                            <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right">
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="card quadra-style" style="width: 13rem;">
+                            <img class="card-img-top border" src="{{ quadra.img }}" >
+                            <div class="card-body">
+                              <h5 class="card-title">{{ quadra.nome }}</h5>
+                              <p class="card-text">{{ quadra.modalidade }}</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 align-self-start mt-4">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div>
+    </div>  
+</body>

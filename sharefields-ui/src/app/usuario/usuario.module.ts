@@ -4,6 +4,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { OverViewUserComponent } from './over-view-user/over-view-user.component';
 import { LoginComponent } from './login/login.component';
 import { RaizModule } from '../raiz/raiz.module';
+import { PainelControleUsuarioMqComponent } from './painel-controle-usuario-mq/painel-controle-usuario-mq.component';
 
 
 
@@ -11,7 +12,8 @@ import { RaizModule } from '../raiz/raiz.module';
   declarations: [
     CadastroComponent,
     OverViewUserComponent,
-    LoginComponent
+    LoginComponent,
+    PainelControleUsuarioMqComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RaizModule } from '../raiz/raiz.module';
   exports:[
     CadastroComponent,
     OverViewUserComponent,
-    LoginComponent
+    LoginComponent,
+    PainelControleUsuarioMqComponent
   ]
 })
 export class UsuarioModule { }

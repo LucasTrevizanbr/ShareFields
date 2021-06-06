@@ -1,0 +1,35 @@
+.titulo-pesquisa{
+    color: #42ce81;
+}
+
+.pesquisa-style{
+    color: #42ce81;
+}
+
+.cards-style{
+    padding: 8px;
+    margin: 10px;
+    background-color:#1C0C3F;
+    color:#7678b8;
+    border: solid 2px #005C0E;
+    border-radius: 5%;
+}
+
+
+.cards-style:hover{
+    box-shadow: 7px 5px 5px #42ce81;
+
+}
+
+
+.side-border-right{
+    border-right: solid 1px #42ce81;
+}
+
+.side-border-left{
+    border-left: solid 1px #42ce81;
+}
+
+hr{
+    color: #42ce81;
+}

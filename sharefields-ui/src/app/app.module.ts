@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { RaizModule } from './raiz/raiz.module';
 import { QuadraModule } from './quadra/quadra.module';
+import { InfoQuadraModule } from './info-quadra/info-quadra.module';
 
 
 
@@ -20,7 +21,8 @@ import { QuadraModule } from './quadra/quadra.module';
     AppRoutingModule,
     UsuarioModule,
     RaizModule,
-    QuadraModule
+    QuadraModule,
+    InfoQuadraModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { UsuarioModule } from '../usuario/usuario.module';
 import { RaizModule } from '../raiz/raiz.module';
 import { UnidadeQuadraComponent } from './unidade-quadra/unidade-quadra.component';
 import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.component';
+import { AtualizarQuadraComponent } from './atualizar-quadra/atualizar-quadra.component';
 
 
 
@@ -14,7 +15,8 @@ import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.compo
   declarations: [
     ListagemQuadraComponent,
     UnidadeQuadraComponent,
-    CadastroQuadraComponent
+    CadastroQuadraComponent,
+    AtualizarQuadraComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.compo
   exports:[
     ListagemQuadraComponent,
     UnidadeQuadraComponent,
-    CadastroQuadraComponent
+    CadastroQuadraComponent,
+    AtualizarQuadraComponent
   ]
 })
 export class QuadraModule { }

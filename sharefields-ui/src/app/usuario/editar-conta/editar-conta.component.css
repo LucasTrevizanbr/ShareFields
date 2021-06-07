@@ -1,0 +1,24 @@
+.form-style{
+    border: double 4px #42ce81;
+    padding: 20px;
+    color: #7678b8;
+    background-color: #1C0C3F;
+    border-radius: 10%;
+}
+
+.form-style input{
+    margin-bottom: 10px; ;
+}
+
+.border-right{
+    border-right: solid 1px #42ce81 ;
+}
+
+
+.central-col{
+    background-color: #000485;
+}
+
+h1{
+    color: #42ce81;
+}

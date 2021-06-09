@@ -1,4 +1,7 @@
+import { environment } from './../../../environments/environment.prod';
+
 import { Component, OnInit } from '@angular/core';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-over-view-user',
@@ -7,11 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverViewUserComponent implements OnInit {
 
-  img:string = "https://conteudo.imguol.com.br/c/esporte/f0/2021/05/10/cristiano-ronaldo-lamenta-lance-durante-derrota-da-juventus-por-3-a-0-para-o-milan-1620659805782_v2_450x337.jpg"
+  apelido:  String = environment.apelido
+  avatar: string = environment.avatar
+  tipo: boolean = environment.disponibilizadorDeQuadra
+  resultado:string
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.verificar();
+  }
+
+  verificar(){ 
+    if(this.tipo === true){
+      this.resultado = "Mestre de Quadra"
+    }else{
+      this.resultado = "Jogador"
+    } 
   }
 
 }

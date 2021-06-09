@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { OverViewUserComponent } from './over-view-user/over-view-user.component';
@@ -8,6 +9,8 @@ import { RaizModule } from '../raiz/raiz.module';
 import { PainelControleUsuarioMqComponent } from './painel-controle-usuario-mq/painel-controle-usuario-mq.component';
 import { PainelControleUsuarioJogadorComponent } from './painel-controle-usuario-jogador/painel-controle-usuario-jogador.component';
 import { EditarContaComponent } from './editar-conta/editar-conta.component';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -22,7 +25,9 @@ import { EditarContaComponent } from './editar-conta/editar-conta.component';
   ],
   imports: [
     CommonModule,
-    RaizModule
+    RaizModule,
+    FormsModule,
+    RouterModule
   ],
   exports:[
     CadastroComponent,

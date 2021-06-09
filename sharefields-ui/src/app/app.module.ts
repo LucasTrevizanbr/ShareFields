@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 
@@ -8,6 +10,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { RaizModule } from './raiz/raiz.module';
 import { QuadraModule } from './quadra/quadra.module';
 import { InfoQuadraModule } from './info-quadra/info-quadra.module';
+
 
 
 
@@ -22,7 +25,8 @@ import { InfoQuadraModule } from './info-quadra/info-quadra.module';
     UsuarioModule,
     RaizModule,
     QuadraModule,
-    InfoQuadraModule
+    InfoQuadraModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,13 +8,13 @@
                     <form>
                         <div class="form-group text-center">
                           <label for="exampleInputEmail1" class="mb-1" >Endereço de email</label>
-                          <input type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Digite seu email">
+                          <input [(ngModel)]="userLogin.email" name="email" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Digite seu email">
                         </div>
                         <div class="form-group text-center">
                           <label for="exampleInputPassword1" class="mb-1 mt-2">Senha</label>
-                          <input type="password" class="form-control" placeholder="Senha">
+                          <input [(ngModel)]="userLogin.senha" name="senha" type="password" class="form-control" placeholder="Senha">
                         </div>
-                        <button type="submit" class="btn btn-outline-success mt-2">Logar</button>
+                        <button type="submit" class="btn btn-outline-success mt-2" (click)="entrar()">Logar</button>
                       </form>
                 </div>   
             </div>   
@@ -26,7 +26,7 @@
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 text-center mb-5">
-               <span>Não é cadastrado ainda? <a href="">cadastra-se</a> </span>
+               <span>Não é cadastrado ainda? <a href="" routerLink='/cadastrar'>cadastra-se</a> </span>
             </div>
         </div>
     </div>

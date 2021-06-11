@@ -1,0 +1,39 @@
+.title-style{
+    color: #42ce81;
+}
+
+.form-style{
+    padding: 10px;
+    background-color: #1C0C3F;
+    border: solid 1px #a682d9;
+    color: #BFF205;
+}
+
+
+.form-style input{
+    margin-bottom: 10px;
+}
+
+.thead-color{
+   color:  #42ce81;  
+}
+
+.trow-color{
+    color: #BFF205;
+}
+
+.botao{
+    margin-right: 10px;
+}
+
+
+
+
+
+.border-right{
+    border-right: solid 1px #42ce81;
+}
+
+.border-left{
+    border-left: solid 1px #42ce81;
+}

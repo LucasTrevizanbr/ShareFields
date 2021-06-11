@@ -6,8 +6,10 @@
 
 .nav-style a{
     color: #42ce81;
+    cursor: pointer;
 
 }
 .nav-style a:hover{
     color: #7678b8;
 }
+

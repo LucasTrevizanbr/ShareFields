@@ -1,0 +1,25 @@
+.titulo{
+    color: #42ce81;
+}
+
+
+.thead-color{
+   color:  #42ce81;  
+}
+
+.trow-color{
+    color: #BFF205;
+}
+
+
+.side-border-right{
+    border-right: solid 1px #42ce81;
+}
+
+.side-border-left{
+    border-left: solid 1px #42ce81;
+}
+
+hr{
+    color: #42ce81;
+}

@@ -1,0 +1,57 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-5  align-self-center ">
+                <app-over-view-user></app-over-view-user>
+            </div>
+            <div class="col-md-5 border-left">
+                <div class="row mt-5 d-flex justify-content-center">
+                    <div class="col-md-5">
+                        <h3 class="title-style">Atualizar Horário</h3>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-3 form-style">
+                        <label for="ruaDaQuadra">Data:</label>
+                        <input type="text" class="form-control" id="dataQuadra" placeholder="22/12/2050">
+                    </div>
+                    <div class="col-md-3 form-style">
+                        <label for="ruaDaQuadra">Início:</label>
+                        <input type="text" class="form-control" id="inicioQuadra" placeholder="10:20">
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-3 form-style">
+                        <label for="ruaDaQuadra">Término:</label>
+                        <input type="text" class="form-control" id="fimQuadra" placeholder="12:30">
+                    </div>
+                    <div class="col-md-3 form-style">
+                        <button type="button" class="btn btn-outline-warning mt-4">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right">
+                <div class="row mt-5 mb-3">
+                    <div class="col-md-11 box-title-style">
+                        <h4>Jogadores Participando</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-12 box-player-style p-2" *ngFor="let item of jogadores">
+                            <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mt-5 align-self-start mt-4">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+    
+</body>
+

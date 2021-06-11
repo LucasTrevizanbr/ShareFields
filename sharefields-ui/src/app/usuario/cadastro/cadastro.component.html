@@ -12,51 +12,51 @@
                     <div class="form-group row">
                       <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputNome" placeholder="Digite seu nome">
+                        <input [(ngModel)]='user.nome' name="nome"  type="nome" class="form-control" id="inputNome" placeholder="Digite seu nome" >
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="inputApelido" class="col-sm-2 col-form-label">Apelido</label>
                       <div class="col-sm-10">
-                        <input type="apelido" class="form-control" id="inputApelido" placeholder="Digite seu apelido">
+                        <input [(ngModel)]="user.apelido" name="apelido" type="apelido" class="form-control" id="inputApelido" placeholder="Digite seu apelido">
                       </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputUrlImage" class="col-sm-2 col-form-label">Avatar</label>
                         <div class="col-sm-10">
-                          <input type="UrlImage" class="form-control" id="inputUrlImage" placeholder="URL da sua imagem de perfil">
+                          <input [(ngModel)]="user.avatar" name="avatar" type="UrlImage" class="form-control" id="inputUrlImage" placeholder="URL da sua imagem de perfil">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu email">
+                          <input [(ngModel)]="user.email" name="email"  type="email" class="form-control" id="inputEmail" placeholder="Digite seu email">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputSenha" class="col-sm-2 col-form-label">Senha</label>
                         <div class="col-sm-10">
-                          <input type="Senha" class="form-control" id="inputSenha" placeholder="Digite sua senha">
+                          <input (input)='confirmarSenha($event)' name="senha" type="password" class="form-control" id="inputSenha" placeholder="Digite sua senha">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputConfirmaSenha" class="col-sm-2 col-form-label">Confirme</label>
                         <div class="col-sm-10">
-                          <input type="ConfirmaSenha" class="form-control" id="inputConfirmaSenha" placeholder="Digite sua senha novamente">
+                          <input [(ngModel)]="user.senha" name="autenticarSenha" type="password" class="form-control" id="inputConfirmaSenha" placeholder="Digite sua senha novamente">
                         </div>
                     </div>
                     <fieldset class="form-group">
                       <div class="row">
                         <div class="col-sm-10">
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="opcao1" checked>
-                            <label class="form-check-label" for="gridRadios1">
+                            <input [(ngModel)]="user.disponibilizadorDeQuadra" name="checarTipo"  class="form-check-input" type="radio" name="disponibilizadorDeQuadra" id="disponibilizadorDeQuadra1" value="false" (change)="marcarRadio($event)">
+                            <label class="form-check-label" for="disponibilizadorDeQuadra1">
                               Jogador
                             </label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="opcao2">
-                            <label class="form-check-label" for="gridRadios2">
+                            <input (change)="marcarRadio($event)" class="form-check-input" type="radio" name="disponibilizadorDeQuadra" id="disponibilizadorDeQuadra2" value="true">
+                            <label class="form-check-label" for="disponibilizadorDeQuadra2">
                               Mestre de quadra
                             </label>
                           </div>
@@ -65,7 +65,7 @@
                     </fieldset>
                     <div class="form-group row">
                       <div class="col-sm-10">
-                        <button type="submit" class="btn">Cadastrar</button>
+                        <button type="submit" class="btn btn-outline-success" (click)='cadastrar()'>Cadastrar</button>
                       </div>
                     </div>
                   </form>
@@ -77,7 +77,9 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <p class="text-center">Ja é cadastrado? <a href="">faça login</a></p>
+            <p class="text-center">
+              Ja é cadastrado? <a href="" routerLink="/logar">faça login</a>
+            </p>
           </div>
         </div>
     </div>

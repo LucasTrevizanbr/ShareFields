@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-nav-lateral',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavLateralComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  sair(){
+    this.authService.sair();
   }
 
 }

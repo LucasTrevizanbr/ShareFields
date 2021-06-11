@@ -10,6 +10,14 @@ export class Quadra{
     public qtdJogadoresMax: number
     public descricao: string
     public proprietarioQuadra : Usuario
+    public cep: string
+    public rua: string
+    public numero: number
+    public bairro: string
+    public cidade: string
+    public uf: string
+    public complemento: string
+    public referencia: string
     public infoQuadra: InfoQuadra[]
 
 }

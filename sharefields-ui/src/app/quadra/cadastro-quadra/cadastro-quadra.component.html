@@ -1,7 +1,7 @@
 <body class="default-style">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 align-self-center">
+            <div class="col-md-3 align-self-start">
                 <app-over-view-user></app-over-view-user>
             </div>
             <div class="col-md-8 border-left border-right">
@@ -15,23 +15,23 @@
                         <form class="form-style">
                             <div class="form-group">
                                 <label for="nomeDaQuadra">Nome da sua quadra</label>
-                                <input type="text" class="form-control" id="nomeQuadra" placeholder="Digite aqui o nome da sua quadra">
+                                <input [(ngModel)]="quadra.nome" name="nome" type="text" class="form-control" id="nomeQuadra" placeholder="Digite aqui o nome da sua quadra">
                             </div>
                             <div class="form-group">
                                 <label for="fotoDaQuadra">Url de foto da sua Quadra</label>
-                                <input type="text" class="form-control" id="fotoQuadra" placeholder="coloque o url da sua foto de quadra aqui">
+                                <input [(ngModel)]="quadra.imagem" name="imagem" type="text" class="form-control" id="fotoQuadra" placeholder="coloque o url da sua foto de quadra aqui">
                             </div>
                             <div class="form-group">
                                 <label for="modalidadeDaQuadra">Modalidade da sua quadra</label>
-                                <input type="text" class="form-control" id="fotoQuadra" placeholder="futebol, tenis, futsal, basket etc..">
+                                <input [(ngModel)]="quadra.modalidade" name="modalidade" type="text" class="form-control" id="fotoQuadra" placeholder="futebol, tenis, futsal, basket etc..">
                             </div>
                             <div class="form-group">
                                 <label for="qtdJogador">Quantidade máxima de jogadores</label>
-                                <input type="number" min="1" class="form-control" id="qtdJogadorQuadra" placeholder="Quantidade máxima em números" >
+                                <input [(ngModel)]="quadra.qtdJogadoresMax" name="qtdPlayers" type="number" min="1" class="form-control" id="qtdJogadorQuadra" placeholder="Quantidade máxima em números" >
                             </div>
                             <div class="form-group">
                                 <label for="descricaoDaQuadra">Descrição</label>
-                                <textarea class="form-control" id="descricaoQuadra" rows="3"></textarea>
+                                <textarea [(ngModel)]="quadra.descricao" name="descricao" class="form-control" id="descricaoQuadra" rows="3"></textarea>
                             </div>
                         </form>  
                     </div>
@@ -39,47 +39,47 @@
                         <form class="form-style">
                             <div class="form-group">
                                 <label for="cepDaQuadra">CEP</label>
-                                <input type="text" class="form-control" id="cepQuadra" placeholder="Digite aqui o CEP da sua quadra">
+                                <input [(ngModel)]="quadra.cep" name="cep" type="text" class="form-control" id="cepQuadra" placeholder="Digite aqui o CEP da sua quadra">
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
                                     <label for="ruaDaQuadra">Rua</label>
-                                    <input type="text" class="form-control" id="ruaQuadra" placeholder="exemplo: Avenida jorge luz">
+                                    <input [(ngModel)]="quadra.rua" name="rua" type="text" class="form-control" id="ruaQuadra" placeholder="exemplo: Avenida jorge luz">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="numeroDaQuadra">Número</label>
-                                    <input type="number" min="0" class="form-control" id="numeroQuadra" placeholder="ex:234" >
+                                    <input [(ngModel)]="quadra.numero" name="numero" type="number" min="0" class="form-control" id="numeroQuadra" placeholder="ex:234" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="bairroDaQuadra">Bairro</label>
-                                <input type="text" class="form-control" id="bairroQuadra" placeholder="ex:Parque dar árvores"> 
+                                <input [(ngModel)]="quadra.bairro" name="bairro" type="text" class="form-control" id="bairroQuadra" placeholder="ex:Parque dar árvores"> 
                             </div>
                             <div class="row">
                                 <div class="col-md-7">
                                     <label for="cidadeDaQuadra">Cidade</label>
-                                    <input type="text" class="form-control" id="cidadeQuadra" placeholder="exemplo: São Paulo">
+                                    <input [(ngModel)]="quadra.cidade" name="cidade" type="text" class="form-control" id="cidadeQuadra" placeholder="exemplo: São Paulo">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="ufDaQuadra">UF</label>
-                                    <input type="text" class="form-control" id="ufQuadra" placeholder="ex:SP" >
+                                    <input [(ngModel)]="quadra.uf" name="uf" type="text" maxlength="2" class="form-control" id="ufQuadra" placeholder="ex:SP" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="complementoDaQuadra">Complemento</label>
-                                <input type="text" class="form-control" id="complementoQuadra" placeholder="ex:Torre x, apertamento y"> 
+                                <input [(ngModel)]="quadra.complemento" name="complemento" type="text" class="form-control" id="complementoQuadra" placeholder="ex:Torre x, apertamento y"> 
                             </div>
                             <div class="form-group">
                                 <label for="referenciaDaQuadra">Referencia</label>
-                                <input type="text" class="form-control" id="referenciaQuadra" placeholder="ex:Perto do mercado Judas"> 
+                                <input [(ngModel)]="quadra.referencia" name="referencia" type="text" class="form-control" id="referenciaQuadra" placeholder="ex:Perto do mercado Judas"> 
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 d-flex justify-content-end">
-                        <button type="button" class="btn btn-outline-danger botoes">Cancelar</button>
-                        <button type="button" class="btn btn-outline-warning">Cadastrar</button>
+                        <button type="button" class="btn btn-outline-danger botoes" (click)='cancelar()'>Cancelar</button>
+                        <button type="button" class="btn btn-outline-warning" (click)='cadastrarQuadra()'>Cadastrar</button>
                     </div>
                 </div>
                 <div class="row">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1 align-self-center">
+            <div class="col-md-1 align-self-start">
                 <app-nav-lateral></app-nav-lateral>
             </div>
         </div>

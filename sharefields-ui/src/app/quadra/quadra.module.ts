@@ -7,6 +7,8 @@ import { RaizModule } from '../raiz/raiz.module';
 import { UnidadeQuadraComponent } from './unidade-quadra/unidade-quadra.component';
 import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.component';
 import { AtualizarQuadraComponent } from './atualizar-quadra/atualizar-quadra.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -21,7 +23,9 @@ import { AtualizarQuadraComponent } from './atualizar-quadra/atualizar-quadra.co
   imports: [
     CommonModule,
     UsuarioModule,
-    RaizModule
+    RaizModule,
+    FormsModule
+   
   ],
   exports:[
     ListagemQuadraComponent,

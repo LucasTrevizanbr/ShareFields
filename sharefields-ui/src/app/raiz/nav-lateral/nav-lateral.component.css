@@ -1,6 +1,7 @@
 .nav-style a{
     color: #7678b8;
     font-size: medium;
+    cursor: pointer;
 }
 
 .nav-style img{

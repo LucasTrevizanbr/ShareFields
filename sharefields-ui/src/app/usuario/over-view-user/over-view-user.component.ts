@@ -14,11 +14,13 @@ export class OverViewUserComponent implements OnInit {
   avatar: string = environment.avatar
   tipo: boolean = environment.disponibilizadorDeQuadra
   resultado:string
+  rotaPainelControle: string
 
   constructor() { }
 
   ngOnInit(){
     this.verificar();
+    this.irParaPainelControle();
   }
 
   verificar(){ 
@@ -27,6 +29,15 @@ export class OverViewUserComponent implements OnInit {
     }else{
       this.resultado = "Jogador"
     } 
+  }
+
+  irParaPainelControle(){
+    if(this.tipo === true){
+      this.rotaPainelControle = "/painel-controle-mq"
+    }else{
+      this.rotaPainelControle = "/painel-contole-jogador"
+    } 
+
   }
 
 }

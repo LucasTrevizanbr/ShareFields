@@ -13,3 +13,7 @@
     font-family: bebas neue ;
     color: white;
 }
+
+html{
+    scroll-behavior: smooth;
+}

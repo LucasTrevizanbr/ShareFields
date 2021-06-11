@@ -42,7 +42,7 @@ public class Quadra {
     private List<InfoQuadra> infoQuadra;
 
     @NotNull
-    private int cep;
+    private String cep;
 
     @NotNull
     private String rua;
@@ -128,11 +128,11 @@ public class Quadra {
         this.infoQuadra = infoQuadra;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 

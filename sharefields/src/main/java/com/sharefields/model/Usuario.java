@@ -35,7 +35,6 @@ public class Usuario {
     private String email;
 
     @NotNull
-    @Size(min = 8, max = 50)
     private String senha;
 
     @OneToMany(mappedBy = "proprietarioQuadra", cascade = CascadeType.ALL)

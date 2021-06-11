@@ -37,24 +37,15 @@ export class CadastroComponent implements OnInit {
     this.user.disponibilizadorDeQuadra = this.tipoUsuario;
 
     if(this.user.senha !== this.confirmeSenha){
-      alert('Sua senhas não são iguais!!'+ this.confirmeSenha)
-      console.log(
-        this.user.apelido,
-        this.user.avatar,
-        this.user.email,
-        this.user.nome,
-        this.user.senha,
-      )
-      
+      alert('Sua senhas não são iguais!!')
+
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario)=>{
         this.user = resp
         this.router.navigate(['/logar'])
         alert('Usuário cadastrado com sucesso!')
       })
-
     }
-
   }
 
 }

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -5,6 +6,7 @@ import { Usuario } from '../model/Usuario';
 
 
 import { UserLogin } from './../model/UserLogin';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,8 @@ import { UserLogin } from './../model/UserLogin';
 export class AuthService {
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router : Router
   ) { }
 
   logar(userLogin: UserLogin): Observable<UserLogin>{
@@ -21,6 +24,16 @@ export class AuthService {
 
   cadastrar(user: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('http://localhost:8080/api/v1/usuario/cadastrar', user)
+  }
+
+  sair(){
+    this.router.navigate(['/logar']); 
+    environment.apelido = '';
+    environment.avatar = '';
+    environment.id = 0;
+    environment.disponibilizadorDeQuadra = false;
+    environment.token = '';
+    environment.nome = '';
   }
   
 }

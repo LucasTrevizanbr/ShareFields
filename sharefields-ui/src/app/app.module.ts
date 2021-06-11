@@ -1,27 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './usuario/login/login.component';
-import { FooterComponent } from './footer/footer.component';
-import { CadastroComponent } from './usuario/cadastro/cadastro.component';
-import { OverViewUserComponent } from './usuario/over-view-user/over-view-user.component';
-import { NavLateralComponent } from './nav-lateral/nav-lateral.component';
-import { NavSuperiorComponent } from './nav-superior/nav-superior.component';
+
 import { UsuarioModule } from './usuario/usuario.module';
+import { RaizModule } from './raiz/raiz.module';
+import { ListagemQuadraComponent } from './listagem-quadra/listagem-quadra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    NavLateralComponent,
-    NavSuperiorComponent
+    ListagemQuadraComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsuarioModule
+    UsuarioModule,
+    RaizModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { OverViewUserComponent } from './over-view-user/over-view-user.component';
 import { LoginComponent } from './login/login.component';
+import { RaizModule } from '../raiz/raiz.module';
 
 
 
@@ -13,7 +14,8 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RaizModule
   ],
   exports:[
     CadastroComponent,

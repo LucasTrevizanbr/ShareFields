@@ -24,7 +24,15 @@ export class QuadraService {
   }
 
   cadastrarQuadra(quadra: Quadra): Observable<Quadra>{
-    return this.http.post<Quadra>('http://localhost:8080/api/v1/usuario/logar', quadra, this.token)
+    return this.http.post<Quadra>('http://localhost:8080/api/v1/quadra', quadra, this.token)
+  }
+
+  buscarTodasAsQuadras(quadra: Quadra): Observable<Quadra[]>{
+    return this.http.get<Quadra[]>('http://localhost:8080/api/v1/quadra', this.token)
+  }
+
+  buscarQuadraPorId(id: number):Observable<Quadra>{
+    return this.http.get<Quadra>(`http://localhost:8080/api/v1/quadra/${id}`, this.token)
   }
   
 }

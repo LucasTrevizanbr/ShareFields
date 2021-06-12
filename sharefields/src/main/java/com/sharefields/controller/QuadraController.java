@@ -38,7 +38,6 @@ public class QuadraController {
 
     @GetMapping("/cidade/{cidade}")
     public  ResponseEntity<List<Quadra>> buscarPorCidade(@PathVariable String cidade){
-
         return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(cidade));
     }
 
@@ -46,7 +45,7 @@ public class QuadraController {
     @GetMapping("/nome/{nome}")
     public  ResponseEntity<List<Quadra>> buscarPorNome(@PathVariable String nome){
 
-        return ResponseEntity.ok(repository.findAllByCidadeContainingIgnoreCase(nome));
+        return ResponseEntity.ok(repository.findAllByNomeContainingIgnoreCase(nome));
     }
 
     @PostMapping

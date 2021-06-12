@@ -26,6 +26,18 @@ export class AuthService {
     return this.http.post<Usuario>('http://localhost:8080/api/v1/usuario/cadastrar', user)
   }
 
+  buscarUsuarioPorId(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(`http://localhost:8080/api/v1/usuario/${id}`)
+  }
+
+  logado(){
+    let logado = false;
+    if(environment.token != ''){
+      logado = true
+    }
+    return logado
+  }
+
   sair(){
     this.router.navigate(['/logar']); 
     environment.apelido = '';

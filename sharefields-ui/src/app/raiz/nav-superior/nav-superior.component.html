@@ -1,14 +1,17 @@
 <ul class="nav justify-content-center nav-style">
     <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="/home">Página inicial</a>
+      <a class="nav-link"routerLink="/home">Página inicial</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="/logar">Logar</a>
+      <a class="nav-link" *ngIf="!auth.logado()"  routerLink="/logar">Logar</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="/cadastrar">Cadastrar</a>
+      <a class="nav-link" *ngIf="auth.logado()"  routerLink="/procurar-quadras">Achar Quadras</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" routerLink="/sobre">Sobre</a>
+      <a class="nav-link"  *ngIf="!auth.logado()" routerLink="/cadastrar">Cadastrar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  routerLink="/sobre">Sobre</a>
     </li>
 </ul>

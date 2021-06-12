@@ -29,9 +29,9 @@
                               
                                 <div class="tab-pane fade show active" id="nav-todasQuadras" role="tabpanel" aria-labelledby="nav-todasQuadras">
                                     <div class="card-group w-100">
-                                        <div class="col-md-4" *ngFor="let item of quadras">
+                                        <div class="col-md-4" *ngFor="let item of listaQuadra">
                                             <div class="card cards-style">
-                                                <img class="card-img-top rounded-circle border" src="{{ item.urlImg }}" width="240" height="180">
+                                                <img class="card-img-top rounded-circle border" src="{{ item.imagem }}" width="240" height="180">
                                                 <div class="card-body">
                                                   <h5 class="card-title">{{ item.nome }}</h5>
                                                   <p class="card-text">{{item.descricao}}</p>

@@ -1,6 +1,8 @@
 import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuadraService } from 'src/app/service/quadra.service';
+import { Quadra } from 'src/app/model/Quadra';
 
 @Component({
   selector: 'app-listagem-quadra',
@@ -9,47 +11,13 @@ import { Router } from '@angular/router';
 })
 export class ListagemQuadraComponent implements OnInit {
 
-  quadras=[
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    },
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    },
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    },
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    },
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    },
-    { 
-      urlImg:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-      nome:"Quadra Legal",
-      descricao:"Maneira de futsal",
-      modalidade:"futsal"
-    }
-  ]
+  quadra:Quadra = new Quadra();
+
+  listaQuadra : Quadra[];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private quadraService: QuadraService
   ) { }
 
   ngOnInit(){
@@ -59,6 +27,14 @@ export class ListagemQuadraComponent implements OnInit {
       alert('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
+
+    this.buscarTodasAsQuadras();
+  }
+
+  buscarTodasAsQuadras(){
+     this.quadraService.buscarTodasAsQuadras(this.quadra).subscribe((resp: Quadra[])=>{
+        this.listaQuadra = resp;
+     })
   }
 
 }

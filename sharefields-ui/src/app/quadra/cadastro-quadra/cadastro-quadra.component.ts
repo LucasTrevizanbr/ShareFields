@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Quadra } from 'src/app/model/Quadra';
 import { QuadraService } from 'src/app/service/quadra.service';
 
 import { environment } from './../../../environments/environment.prod';
+
+import { Quadra } from 'src/app/model/Quadra';
+import { Usuario } from './../../model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-cadastro-quadra',
@@ -14,9 +17,13 @@ export class CadastroQuadraComponent implements OnInit {
 
   quadra: Quadra = new Quadra();
 
+  usuario : Usuario = new Usuario();
+  idUsuario = environment.id;
+
   constructor(
     private router: Router,
-    private quadraService : QuadraService
+    private quadraService : QuadraService,
+    private authService : AuthService
   ) { }
 
   ngOnInit(){
@@ -28,8 +35,21 @@ export class CadastroQuadraComponent implements OnInit {
     };
   }
 
+  usuarioDonoQuadra(){
+    this.authService.buscarUsuarioPorId(this.idUsuario).subscribe((resp: Usuario)=>{
+      this.usuario = resp
+    })
+
+  }
+
   cadastrarQuadra(){
+
+    this.usuario.id = this.idUsuario
+    this.quadra.proprietarioQuadra = this.usuario
+    
+
     this.quadraService.cadastrarQuadra(this.quadra).subscribe((resp : Quadra)=>{
+      
       this.quadra = resp;
       alert("Quadra cadastrada com sucesso!")
       this.quadra = new Quadra()

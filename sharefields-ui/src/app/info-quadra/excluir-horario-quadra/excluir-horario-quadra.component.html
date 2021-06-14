@@ -11,15 +11,15 @@
                     </div>
                 </div>
                 <div class="row mt-2 d-flex justify-content-center">
-                    <div class="col-md-8 box-player-style p-2" *ngFor="let item of jogadores">
+                    <div class="col-md-8 box-player-style p-2" *ngFor="let item of infoQuadra.jogadores">
                         <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
                     </div>  
                 </div> 
                 <div class="row d-flex justify-content-center mt-5 mb-5">
                     <div class="col-md-8">
                         <h3 class="title-confirm-style">Quer mesmo excluir esse horário?</h3>
-                        <button type="button" class="btn btn-outline-info botao">Confirmar</button>
-                        <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                        <button type="button" class="btn btn-outline-info botao" (click)="excluirInfoQuadra()">Confirmar</button>
+                        <button type="button" class="btn btn-outline-danger" routerLink='/painel-controle-mq'>Cancelar</button>
                     </div>  
                 </div>
             </div>

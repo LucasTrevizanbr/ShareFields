@@ -9,6 +9,7 @@ import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.compo
 import { AtualizarQuadraComponent } from './atualizar-quadra/atualizar-quadra.component';
 import { FormsModule } from '@angular/forms';
 import { ExcluirQuadraComponent } from './excluir-quadra/excluir-quadra.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -26,7 +27,8 @@ import { ExcluirQuadraComponent } from './excluir-quadra/excluir-quadra.componen
     CommonModule,
     UsuarioModule,
     RaizModule,
-    FormsModule
+    FormsModule,
+    RouterModule
    
   ],
   exports:[

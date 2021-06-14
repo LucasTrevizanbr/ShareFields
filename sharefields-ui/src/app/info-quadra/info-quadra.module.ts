@@ -9,6 +9,8 @@ import { NovoHorarioQuadraComponent } from './novo-horario-quadra/novo-horario-q
 import { AtualizarHorarioQuadraComponent } from './atualizar-horario-quadra/atualizar-horario-quadra.component';
 import { ExcluirHorarioQuadraComponent } from './excluir-horario-quadra/excluir-horario-quadra.component';
 import { SairQuadraComponent } from './sair-quadra/sair-quadra.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +25,9 @@ import { SairQuadraComponent } from './sair-quadra/sair-quadra.component';
   imports: [
     CommonModule,
     UsuarioModule,
-    RaizModule
+    RaizModule,
+    RouterModule,
+    FormsModule
   ],
   exports:[
     ParticiparQuadraComponent,

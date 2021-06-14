@@ -76,8 +76,8 @@
                         <p class="text-center">
                             Para adicionar, excluir ou editar horários de quadra, clique aqui.
                         </p>
-                        <div class="row d-flex justify-content-center ">
-                            <button type="button" class="btn btn-outline-primary">Editar Horários de Quadra</button>
+                        <div class="row d-flex justify-content-center">
+                            <button [routerLink]="['/editar-horario', quadra.id]" type="button" class="btn btn-outline-primary">Editar Horários de Quadra</button>
                         </div>     
                     </div>
                 </div>

@@ -13,20 +13,20 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Data:</label>
-                        <input type="text" class="form-control" id="dataQuadra" placeholder="22/12/2050">
+                        <input [(ngModel)]="infoQuadra.dataDisponivel" name="data" type="text" class="form-control" id="dataQuadra" placeholder="22/12/2050">
                     </div>
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Início:</label>
-                        <input type="text" class="form-control" id="inicioQuadra" placeholder="10:20">
+                        <input [(ngModel)]="infoQuadra.horaInicio" name="inicio" type="text" class="form-control" id="inicioQuadra" placeholder="10:20">
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Término:</label>
-                        <input type="text" class="form-control" id="fimQuadra" placeholder="12:30">
+                        <input [(ngModel)]="infoQuadra.horaFim" name="fim" type="text" class="form-control" id="fimQuadra" placeholder="12:30">
                     </div>
                     <div class="col-md-3 form-style">
-                        <button type="button" class="btn btn-outline-info mt-4">Criar</button>
+                        <button type="button" class="btn btn-outline-info mt-4" (click)="criarInfoQuadra()" >Criar</button>
                     </div>
                 </div>
                 <div class="row mt-1">
@@ -47,13 +47,13 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr class="trow-color">
-                                <th scope="row">23/08/2021</th>
-                                <td>13:30</td>
-                                <td>16:50</td>
+                              <tr class="trow-color" *ngFor="let item of quadra.infoQuadra">
+                                <th scope="row">{{ item.dataDisponivel}}</th>
+                                <td>{{ item.horaInicio }}</td>
+                                <td>{{ item.horaFim }}</td>
                                 <td class="d-flex justify-content-end">
-                                    <a class="btn botao btn-outline-info ">Editar</a>
-                                    <a class="btn btn-outline-danger ">Exluir</a>
+                                    <button class="btn botao btn-outline-info" [routerLink]="['/atualizar-horario', item.id]">Editar</button>
+                                    <button class="btn btn-outline-danger" [routerLink]="['/excluir-horario', item.id]">Exluir</button>
                                 </td>
                               </tr>
                             </tbody>

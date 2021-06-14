@@ -12,7 +12,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-7">
-                        <img [src]="quadra.img" class="img-fluid border" >
+                        <img [src]="quadra.imagem" class="img-fluid border" >
                     </div>
                     <div class="col-md-5 bg-columns">
                         <div class="row">
@@ -32,12 +32,12 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr class="trow-color">
-                                        <th scope="row">23/08/2021</th>
-                                        <td>13:30</td>
-                                        <td>16:50</td>
+                                      <tr class="trow-color" *ngFor="let item of quadra.infoQuadra">
+                                        <th scope="row">{{ item.dataDisponivel}}</th>
+                                        <td>{{ item.horaInicio }}</td>
+                                        <td>{{ item.horaFim }}</td>
                                         <td class="d-flex justify-content-end">
-                                            <a class="btn btn-outline-info ">Participar</a>
+                                            <button class="btn btn-outline-info">Participar</button>
                                         </td>
                                       </tr>
                                     </tbody>

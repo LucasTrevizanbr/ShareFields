@@ -36,7 +36,7 @@
                                                   <h5 class="card-title">{{ item.nome }}</h5>
                                                   <p class="card-text">{{item.descricao}}</p>
                                                   <p class="card-text"><small>{{ item.modalidade }}</small></p>
-                                                  <a href="#" class="btn btn-outline-info">Ver Quadra</a>
+                                                  <button class="btn btn-outline-info" [routerLink]="['/detalhe-quadra', item.id]">Ver Quadra</button>
                                                 </div>
                                               </div>
                                         </div>

@@ -1,4 +1,8 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { QuadraService } from 'src/app/service/quadra.service';
+import { Quadra } from 'src/app/model/Quadra';
 
 @Component({
   selector: 'app-unidade-quadra',
@@ -7,29 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnidadeQuadraComponent implements OnInit {
 
-  quadra ={
-    img:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-    nome:"Quadra Legal",
-    descricao:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dignissimos ut placeat cumque sed repellat asperiores sequi dolor ullam sapiente officiis, quia cupiditate quidem, harum architecto officia, facilis culpa soluta.",
-    rua:"Avenida Gaivotas",
-    numero:"48",
-    cidade:"São Paulo",
-    bairro:"Cantinho do céu",
-    infoQuadra:[{
-      data: "23/08/2021",
-      hrInicio:"13:20",
-      hrFim:"15:30"
-    },
-    {
-      data: "22/09/2022",
-      hrInicio:"12:00",
-      hrFim:"16:00"
-    }]
+  quadra: Quadra = new Quadra();
+
+  constructor(
+    private route: ActivatedRoute,
+    private quadraService: QuadraService,
+    private router: Router
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0);
+
+    if(environment.token ==''){
+      alert('Sua seção expirou, faça login novamente!')
+      this.router.navigate(['/logar'])
+    };
+
+    let idRotaAtiva = this.route.snapshot.params['id'];
+    this.acharQuadraPorID(idRotaAtiva);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  acharQuadraPorID(id: number){
+    this.quadraService.buscarQuadraPorId(id).subscribe((resp: Quadra)=>{
+      this.quadra = resp;
+    })
   }
 
 }

@@ -13,20 +13,20 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Data:</label>
-                        <input type="text" class="form-control" id="dataQuadra" placeholder="22/12/2050">
+                        <input [(ngModel)]="infoQuadra.dataDisponivel" name="data" type="text" class="form-control" id="dataQuadra">
                     </div>
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Início:</label>
-                        <input type="text" class="form-control" id="inicioQuadra" placeholder="10:20">
+                        <input [(ngModel)]="infoQuadra.horaInicio" name="inicio" type="text" class="form-control" id="inicioQuadra">
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 form-style">
                         <label for="ruaDaQuadra">Término:</label>
-                        <input type="text" class="form-control" id="fimQuadra" placeholder="12:30">
+                        <input [(ngModel)]="infoQuadra.horaFim" name="fim" type="text" class="form-control" id="fimQuadra">
                     </div>
                     <div class="col-md-3 form-style">
-                        <button type="button" class="btn btn-outline-warning mt-4">Atualizar</button>
+                        <button type="button" class="btn btn-outline-warning mt-4" (click)="atualizarQuadra()">Atualizar</button>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <h4>Jogadores Participando</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-12 box-player-style p-2" *ngFor="let item of jogadores">
+                        <div class="col-md-12 box-player-style p-2" *ngFor="let item of infoQuadra.jogadores">
                             <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
                         </div>  
                     </div>

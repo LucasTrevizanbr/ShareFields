@@ -1,3 +1,5 @@
+
+
 export class UserLogin{
 
     public id : number
@@ -8,5 +10,4 @@ export class UserLogin{
     public email: string
     public senha: string
     public token: string
-
 }

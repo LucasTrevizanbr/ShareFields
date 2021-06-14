@@ -5,18 +5,18 @@ import { QuadraService } from 'src/app/service/quadra.service';
 import { Quadra } from 'src/app/model/Quadra';
 
 @Component({
-  selector: 'app-atualizar-quadra',
-  templateUrl: './atualizar-quadra.component.html',
-  styleUrls: ['./atualizar-quadra.component.css']
+  selector: 'app-excluir-quadra',
+  templateUrl: './excluir-quadra.component.html',
+  styleUrls: ['./excluir-quadra.component.css']
 })
-export class AtualizarQuadraComponent implements OnInit {
+export class ExcluirQuadraComponent implements OnInit {
 
   quadra: Quadra = new Quadra();
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
     private quadraService: QuadraService,
-    private route: ActivatedRoute
+    private router: Router
   ) { }
 
   ngOnInit(){
@@ -37,16 +37,11 @@ export class AtualizarQuadraComponent implements OnInit {
     })
   }
 
-  atualizarQuadra(){
-    this.quadraService.atualizarQuadra(this.quadra).subscribe((resp: Quadra)=>{
-      this.quadra = resp;
-      alert("Quadra Atualizada com sucesso!");
+  excluirQuadra(){
+    this.quadraService.deletarQuadra(this.quadra.id).subscribe(()=>{
+      alert('Quadra excluida com sucesso!');
       this.router.navigate(['/painel-controle-mq']);
     })
-  }
-
-  cancelar(){
-    this.router.navigate(['/procurar-quadras'])
   }
 
 }

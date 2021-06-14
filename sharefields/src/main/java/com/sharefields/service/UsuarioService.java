@@ -50,10 +50,11 @@ public class UsuarioService {
                 user.get().setApelido(usuario.get().getApelido());
                 user.get().setAvatar(usuario.get().getAvatar());
                 user.get().setId(usuario.get().getId());
-
                 return user;
             }
         }
         return null;
     }
+
+
 }

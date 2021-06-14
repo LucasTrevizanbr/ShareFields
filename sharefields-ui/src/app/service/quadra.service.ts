@@ -34,5 +34,13 @@ export class QuadraService {
   buscarQuadraPorId(id: number):Observable<Quadra>{
     return this.http.get<Quadra>(`http://localhost:8080/api/v1/quadra/${id}`, this.token)
   }
+
+  atualizarQuadra(quadra: Quadra):Observable<Quadra>{
+    return this.http.put<Quadra>(`http://localhost:8080/api/v1/quadra`, quadra, this.token)
+  }
+
+  deletarQuadra(id: number){
+    return this.http.delete(`http://localhost:8080/api/v1/quadra/${id}`, this.token)
+  }
   
 }

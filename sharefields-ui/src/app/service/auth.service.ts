@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment.prod';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/Usuario';
@@ -17,6 +17,7 @@ export class AuthService {
     private http: HttpClient,
     private router : Router
   ) { }
+
 
   logar(userLogin: UserLogin): Observable<UserLogin>{
     return this.http.post<UserLogin>('http://localhost:8080/api/v1/usuario/logar', userLogin)

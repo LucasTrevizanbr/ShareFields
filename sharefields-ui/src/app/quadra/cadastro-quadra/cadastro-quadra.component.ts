@@ -39,7 +39,6 @@ export class CadastroQuadraComponent implements OnInit {
     this.authService.buscarUsuarioPorId(this.idUsuario).subscribe((resp: Usuario)=>{
       this.usuario = resp
     })
-
   }
 
   cadastrarQuadra(){
@@ -65,7 +64,6 @@ export class CadastroQuadraComponent implements OnInit {
   checarCampos(): boolean{
     if(this.quadra.imagem === '' || this.quadra.nome === '' || this.quadra.qtdJogadoresMax === null || this.quadra.descricao === '' || this.quadra.modalidade === '' || this.quadra.cep === '' || this.quadra.rua === '' || this.quadra.numero === null || this.quadra.uf === '' || this.quadra.cidade === '' || this.quadra.bairro === ''){
       return true;
-
     }else{
       return false
     }

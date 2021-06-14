@@ -15,10 +15,13 @@
     border-radius: 5%;
 }
 
+.botao{
+    margin-right: 10px ;
+}
+
 
 .cards-style:hover{
     box-shadow: 7px 5px 5px #42ce81;
-
 }
 
 

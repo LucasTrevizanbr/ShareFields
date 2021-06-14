@@ -8,6 +8,7 @@ import { UnidadeQuadraComponent } from './unidade-quadra/unidade-quadra.componen
 import { CadastroQuadraComponent } from './cadastro-quadra/cadastro-quadra.component';
 import { AtualizarQuadraComponent } from './atualizar-quadra/atualizar-quadra.component';
 import { FormsModule } from '@angular/forms';
+import { ExcluirQuadraComponent } from './excluir-quadra/excluir-quadra.component';
 
 
 
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     ListagemQuadraComponent,
     UnidadeQuadraComponent,
     CadastroQuadraComponent,
-    AtualizarQuadraComponent
+    AtualizarQuadraComponent,
+    ExcluirQuadraComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     ListagemQuadraComponent,
     UnidadeQuadraComponent,
     CadastroQuadraComponent,
-    AtualizarQuadraComponent
+    AtualizarQuadraComponent,
+    ExcluirQuadraComponent
   ]
 })
 export class QuadraModule { }

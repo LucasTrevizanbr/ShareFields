@@ -1,6 +1,8 @@
 package com.sharefields.model;
 
 
+import java.util.List;
+
 public class UserLogin {
 
     private long id;
@@ -82,4 +84,5 @@ public class UserLogin {
     public void setToken(String token) {
         this.token = token;
     }
+
 }

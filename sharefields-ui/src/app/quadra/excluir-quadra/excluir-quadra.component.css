@@ -1,0 +1,39 @@
+.titulo-quadra{
+    color: #42ce81;
+}
+
+h2{
+    color: #42ce81;
+    font-size: 1.45em;
+}
+
+.thead-color{
+   color:  #42ce81;  
+}
+
+.trow-color{
+    color: #7678b8;
+}
+
+.horarios-style{
+    background-color: #7678b8;
+    color:#42ce81 ;
+}
+
+.bg-columns{
+    background-color: #1C0C3F;
+    color: #7678b8;
+    border: solid 1px #42ce81;
+}
+
+.botao{
+    margin-right: 10px;
+}
+
+.border-right{
+    border-right: solid 1px #42ce81;
+}
+
+.border-left{
+    border-left: solid 1px #42ce81;
+}

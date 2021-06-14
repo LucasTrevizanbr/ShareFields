@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AtualizarQuadraComponent } from './quadra/atualizar-quadra/atualizar-quadra.component';
+
+
 import { CadastroQuadraComponent } from './quadra/cadastro-quadra/cadastro-quadra.component';
+import { ExcluirQuadraComponent } from './quadra/excluir-quadra/excluir-quadra.component';
 import { ListagemQuadraComponent } from './quadra/listagem-quadra/listagem-quadra.component';
 import { HomeComponent } from './raiz/home/home.component';
 import { SobreComponent } from './raiz/sobre/sobre.component';
@@ -19,6 +23,8 @@ const routes: Routes = [
 
   {path:'procurar-quadras',component:ListagemQuadraComponent},
   {path:'cadastrar-quadra', component:CadastroQuadraComponent},
+  {path:'editar-quadra/:id', component: AtualizarQuadraComponent},
+  {path:'excluir-quadra/:id', component: ExcluirQuadraComponent},
 
   {path:'painel-controle-mq', component: PainelControleUsuarioMqComponent},
   {path:'painel-contole-jogador', component: PainelControleUsuarioJogadorComponent}

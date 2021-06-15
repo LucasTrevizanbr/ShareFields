@@ -1,0 +1,32 @@
+.titulo-quadra{
+    color: #42ce81;
+}
+
+.titulo{
+    color: #42ce81;
+    font-size: 1.45em;
+}
+
+.thead-color{
+   color:  #42ce81;  
+}
+
+.trow-color{
+    color: #BFF205;
+}
+
+.border-right{
+    border-right: solid 1px #42ce81;
+}
+
+.border-left{
+    border-left: solid 1px #42ce81;
+}
+
+.quadra-style{
+    background-color:#1C0C3F ;
+    color:#BFF205;
+    padding: 5px;
+    border: solid 1px #a682d9;
+    
+}

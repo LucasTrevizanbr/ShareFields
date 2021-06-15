@@ -37,12 +37,12 @@
                                         <td>{{ item.horaInicio }}</td>
                                         <td>{{ item.horaFim }}</td>
                                         <td class="d-flex justify-content-end">
-                                            <button class="btn btn-outline-info">Participar</button>
+                                            <button class="btn btn-outline-info" *ngIf="jogador()" [routerLink]="['/detalhe-infoQuadra', item.id]" >Participar</button>
                                         </td>
                                       </tr>
                                     </tbody>
                                </table>
-                               <button type="button" class="btn btn-outline-warning">Ver todos</button>
+                               <button type="button" class="btn btn-outline-warning" [routerLink]="['/todos-horarios-quadra', quadra.id]">Ver todos</button>
                             </div>
                         </div>
                     </div>

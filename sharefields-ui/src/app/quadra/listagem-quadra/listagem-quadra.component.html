@@ -34,7 +34,6 @@
                                                 <img class="card-img-top rounded-circle border" src="{{ item.imagem }}" width="240" height="180">
                                                 <div class="card-body">
                                                   <h5 class="card-title">{{ item.nome }}</h5>
-                                                  <p class="card-text">{{item.descricao}}</p>
                                                   <p class="card-text"><small>{{ item.modalidade }}</small></p>
                                                   <button class="btn btn-outline-info" [routerLink]="['/detalhe-quadra', item.id]">Ver Quadra</button>
                                                 </div>
@@ -44,14 +43,10 @@
                                 </div>
                                 
                                 <div class="tab-pane fade" id="nav-modalidade" role="tabpanel" aria-labelledby="nav-modalidade">Modalidade
-        
                                 </div>
         
                                 <div class="tab-pane fade" id="nav-cidade" role="tabpanel" aria-labelledby="nav-cidade">Cidade
-        
-        
                                 </div>
-    
                         </div>
                 </div>
 
@@ -62,13 +57,10 @@
                 <app-nav-lateral></app-nav-lateral>
             </div>
         </div>
-
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-12">
                 <hr>
             </div>
         </div>
-
-
     </div>
 </body>

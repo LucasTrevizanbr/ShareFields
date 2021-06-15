@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AtualizarHorarioQuadraComponent } from './info-quadra/atualizar-horario-quadra/atualizar-horario-quadra.component';
 import { ExcluirHorarioQuadraComponent } from './info-quadra/excluir-horario-quadra/excluir-horario-quadra.component';
+import { ListarHorarioQuadraComponent } from './info-quadra/listar-horario-quadra/listar-horario-quadra.component';
 import { NovoHorarioQuadraComponent } from './info-quadra/novo-horario-quadra/novo-horario-quadra.component';
+import { ParticiparQuadraComponent } from './info-quadra/participar-quadra/participar-quadra.component';
+import { SairQuadraComponent } from './info-quadra/sair-quadra/sair-quadra.component';
 import { AtualizarQuadraComponent } from './quadra/atualizar-quadra/atualizar-quadra.component';
 
 
@@ -34,6 +37,9 @@ const routes: Routes = [
   {path:'editar-horario/:id', component: NovoHorarioQuadraComponent},
   {path:'excluir-horario/:id', component: ExcluirHorarioQuadraComponent},
   {path:'atualizar-horario/:id', component: AtualizarHorarioQuadraComponent},
+  {path:'detalhe-infoQuadra/:id', component: ParticiparQuadraComponent},
+  {path:'todos-horarios-quadra/:id', component:ListarHorarioQuadraComponent},
+  {path:'sair-info-quadra/:id', component: SairQuadraComponent},
 
   {path:'painel-controle-mq', component: PainelControleUsuarioMqComponent},
   {path:'painel-contole-jogador', component: PainelControleUsuarioJogadorComponent}

@@ -1,0 +1,63 @@
+<body class="default-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 align-self-center">
+                <app-over-view-user></app-over-view-user>
+            </div>
+            <div class="col-md-5 border-left">
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-12 mb-1">
+                                <h5 class="titulo mt-1 mb-2">Horários da Quadra</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead class="thead-color" >
+                                      <tr>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Início</th>
+                                        <th scope="col">Término</th>
+                                        <th scope="col" class="d-flex justify-content-end">Participar</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="trow-color" *ngFor="let item of quadra.infoQuadra">
+                                        <th scope="row">{{ item.dataDisponivel }}</th>
+                                        <td>{{ item.horaInicio}}</td>
+                                        <td>{{ item.horaFim }}</td>
+                                        <td class="d-flex justify-content-end">
+                                            <button class="btn btn-outline-info" *ngIf="jogador()" [routerLink]="['/detalhe-infoQuadra', item.id]" >Participar</button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                               </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 border-right">
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-12">
+                        <div class="card quadra-style" style="width: 13rem;">
+                            <img class="card-img-top border" [src]="quadra.imagem" >
+                            <div class="card-body">
+                              <h5 class="card-title">{{ quadra.nome }}</h5>
+                              <p class="card-text">{{ quadra.modalidade }}</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 align-self-center">
+                <app-nav-lateral></app-nav-lateral>
+            </div>
+        </div> 
+        <div class="row mt-5">
+        </div>
+        <div class="row mt-5"></div>
+    </div>  
+</body>

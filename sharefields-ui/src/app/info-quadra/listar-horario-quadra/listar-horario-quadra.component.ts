@@ -1,27 +1,27 @@
-import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { QuadraService } from 'src/app/service/quadra.service';
 import { Quadra } from 'src/app/model/Quadra';
+import { QuadraService } from 'src/app/service/quadra.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-unidade-quadra',
-  templateUrl: './unidade-quadra.component.html',
-  styleUrls: ['./unidade-quadra.component.css']
+  selector: 'app-listar-horario-quadra',
+  templateUrl: './listar-horario-quadra.component.html',
+  styleUrls: ['./listar-horario-quadra.component.css']
 })
-export class UnidadeQuadraComponent implements OnInit {
+export class ListarHorarioQuadraComponent implements OnInit {
 
   quadra: Quadra = new Quadra();
 
   constructor(
     private route: ActivatedRoute,
     private quadraService: QuadraService,
-    private router: Router,
+    private router: Router
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
-
+    
     if(environment.token ==''){
       alert('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
@@ -36,6 +36,7 @@ export class UnidadeQuadraComponent implements OnInit {
       this.quadra = resp;
     })
   }
+
 
   jogador():boolean{
     if(environment.disponibilizadorDeQuadra){

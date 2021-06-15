@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
+import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
+import { InfoQuadraService } from 'src/app/service/info-quadra.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-sair-quadra',
@@ -7,29 +15,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SairQuadraComponent implements OnInit {
 
-  jogadores=[{
-    avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-    apelido:"LuekoManiaco",
-    },
-    {
-      avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-      apelido:"LuekoManiaco",
-    },
-    {
-      avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-      apelido:"LuekoManiaco",
-    }
-  ]
+  usuario: Usuario = new Usuario();
 
-  quadra={
-    img:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-    nome:"Quadra Legal",
-    modalidade:"Futsal"
+  infoQuadra: InfoQuadra = new InfoQuadra();
+
+  constructor(
+    private route: ActivatedRoute,
+    private infoQuadraService: InfoQuadraService,
+    private router: Router,
+    private authService: AuthService
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0);
+
+    if(environment.token ==''){
+      alert('Sua seção expirou, faça login novamente!')
+      this.router.navigate(['/logar'])
+    };
+
+    let idRotaAtiva = this.route.snapshot.params['id'];
+    this.acharInfoQuadraPorID(idRotaAtiva);
+    this.acharUsuarioPorID();
   }
 
-  constructor() { }
+  acharInfoQuadraPorID(id: number){
+    this.infoQuadraService.procurarInfoQuadraPorId(id).subscribe((resp: InfoQuadra)=>{
+      this.infoQuadra = resp
+    })
+  }
 
-  ngOnInit(): void {
+  acharUsuarioPorID(){
+    this.authService.buscarUsuarioPorId(environment.id).subscribe((resp: Usuario)=>{
+      this.usuario = resp;
+    })
+  }
+
+  sairDaInfoQuadra(){
+    this.infoQuadraService.removerUsuarioDaInfoQuadra(this.infoQuadra.id, this.usuario.id).subscribe((resp: InfoQuadra)=>{
+      this.infoQuadra = resp;
+      alert('Você saiu do horario de quadra!');
+      this.router.navigate(['/painel-controle-jogador']);
+    })
   }
 
 }

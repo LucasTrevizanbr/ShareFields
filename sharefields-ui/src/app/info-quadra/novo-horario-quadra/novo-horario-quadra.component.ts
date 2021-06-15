@@ -51,13 +51,5 @@ export class NovoHorarioQuadraComponent implements OnInit {
     })  
   }
 
-  checarCampos(): boolean{
-    if(this.infoQuadra.dataDisponivel === '' || this.infoQuadra.horaInicio === '' || this.infoQuadra.horaFim === ''){
-      alert('Preencha todos os campos antes de cadastrar');
-      return true 
-    }else{
-      return false
-    }
-  }
 
 }

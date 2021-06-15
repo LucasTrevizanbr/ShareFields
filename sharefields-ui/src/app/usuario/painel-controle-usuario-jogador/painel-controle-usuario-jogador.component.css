@@ -11,6 +11,10 @@
     color: #BFF205;
 }
 
+.botao{
+    margin-right: 5px;
+}
+
 
 .side-border-right{
     border-right: solid 1px #42ce81;

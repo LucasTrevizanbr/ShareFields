@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { Usuario } from 'src/app/model/Usuario';
+import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-painel-controle-usuario-jogador',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelControleUsuarioJogadorComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario();
+  
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+
+  ) { }
+
+  ngOnInit(){
+    window.scroll(0,0);
+
+    if(environment.token ==''){
+      alert('Sua seção expirou, faça login novamente!')
+      this.router.navigate(['/logar'])
+    };
+
+    this.usuarioJogadorLogado();
+  }
+  
+  usuarioJogadorLogado(){
+    this.authService.buscarUsuarioPorId(environment.id).subscribe((resp: Usuario)=>{
+      this.usuario = resp
+    })
   }
 
 }

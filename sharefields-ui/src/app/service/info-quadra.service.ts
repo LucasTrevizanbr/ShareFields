@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { environment } from './../../environments/environment.prod';
-
 import { InfoQuadra } from '../model/InfoQuadra';
 
 @Injectable({
@@ -37,6 +36,15 @@ export class InfoQuadraService {
     return this.http.delete(`http://localhost:8080/api/v1/infoQuadra/${id}`, this.token)
   }
 
+  inserirUsuarioNaInfoQuadra(idInfoQuadra: number, idUsuario: number):Observable<InfoQuadra>{
+    return this.http.put<InfoQuadra>(`http://localhost:8080/api/v1/infoQuadra/inserir/infoquadra/${idInfoQuadra}/usuario/${idUsuario}`, this.token);
+    
+  }
+
+  removerUsuarioDaInfoQuadra(idInfoQuadra: number, idUsuario: number):Observable<InfoQuadra>{
+    return this.http.put<InfoQuadra>(`http://localhost:8080/api/v1/infoQuadra/remover/infoquadra/${idInfoQuadra}/usuario/${idUsuario}`, this.token);
+    
+  }
 
 
 }

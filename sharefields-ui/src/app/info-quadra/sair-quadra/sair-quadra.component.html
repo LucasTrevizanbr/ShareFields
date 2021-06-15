@@ -13,26 +13,26 @@
                         <h3>3/4</h3>
                     </div>
                     <div class="row d-flex justify-content-center mt-2">
-                        <div class="col-md-10 box-player-style p-2" *ngFor="let item of jogadores">
+                        <div class="col-md-10 box-player-style p-2" *ngFor="let item of infoQuadra.jogadores">
                             <img class="image-fluid rounded-circle border" width="40px" height="40px" [src]="item.avatar">{{item.apelido}}
                         </div>  
                     </div>
                     <div class="row d-flex justify-content-center mt-2 mb-5">
                         <div class="col-md-4 box-player-style p-1">
-                            <h5>Data:</h5>
+                            <h5>Data: {{ infoQuadra.dataDisponivel }}</h5>
                         </div>
                         <div class="col-md-3 box-player-style p-1">
-                            <h5>Início:</h5>                           
+                            <h5>Início: {{ infoQuadra.horaInicio }}</h5>                           
                         </div>
                         <div class="col-md-3 box-player-style p-1">
-                            <h5>Até:</h5>                          
+                            <h5>Até: {{ infoQuadra.horaFim }}</h5>                          
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center mt-5 mb-5">
                         <div class="col-md-10">
                             <h3 class="title-confirm-style">Quer mesmo sair da quadra??</h3>
-                            <button type="button" class="btn btn-outline-info botao">Confirmar</button>
-                            <button type="button" class="btn btn-outline-danger">Cancelar</button>
+                            <button type="button" class="btn btn-outline-info botao" (click)="sairDaInfoQuadra()">Confirmar</button>
+                            <button type="button" class="btn btn-outline-danger" routerLink='/procurar-quadras'>Cancelar</button>
                         </div>  
                     </div>
                 </div>
@@ -41,10 +41,10 @@
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="card quadra-style" style="width: 13rem;">
-                            <img class="card-img-top border" src="{{ quadra.img }}" >
+                            <img class="card-img-top border" [src]=" infoQuadra.quadra.imagem " >
                             <div class="card-body">
-                              <h5 class="card-title">{{ quadra.nome }}</h5>
-                              <p class="card-text">{{ quadra.modalidade }}</p>
+                              <h5 class="card-title">{{ infoQuadra.quadra.nome }}</h5>
+                              <p class="card-text">{{ infoQuadra.quadra.modalidade }}</p>
                             </div>
                           </div>
                     </div>
@@ -54,5 +54,11 @@
                 <app-nav-lateral></app-nav-lateral>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row mt-3"></div>
     </div>  
 </body>

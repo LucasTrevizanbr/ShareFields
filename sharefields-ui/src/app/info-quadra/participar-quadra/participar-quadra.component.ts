@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { InfoQuadraService } from 'src/app/service/info-quadra.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-participar-quadra',
@@ -6,30 +10,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./participar-quadra.component.css']
 })
 export class ParticiparQuadraComponent implements OnInit {
+  
+  infoQuadra: InfoQuadra = new InfoQuadra();
 
-  jogadores=[{
-    avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-    apelido:"LuekoManiaco",
-    },
-    {
-      avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-      apelido:"LuekoManiaco",
-    },
-    {
-      avatar:"https://www.futbox.com/img/v1/552/51a/e8a/d14/8bfc0ebe560ed9bd17e0.png",
-      apelido:"LuekoManiaco",
-    }
-  ]
+  constructor(
+    private route: ActivatedRoute,
+    private infoQuadraService: InfoQuadraService,
+    private router: Router
+  ) { }
 
-  quadra={
-    img:"https://ginasiomedianeira.com.br/wp-content/uploads/2018/05/20180524_143450_HDR.jpg",
-    nome:"Quadra Legal",
-    modalidade:"Futsal"
+  ngOnInit(){
+    window.scroll(0,0);
+
+    if(environment.token ==''){
+      alert('Sua seção expirou, faça login novamente!')
+      this.router.navigate(['/logar'])
+    };
+
+    let idRotaAtiva = this.route.snapshot.params['id'];
+    this.acharInfoQuadraPorID(idRotaAtiva);
   }
 
-  constructor() { }
+  acharInfoQuadraPorID(id: number){
+    this.infoQuadraService.procurarInfoQuadraPorId(id).subscribe((resp: InfoQuadra)=>{
+      this.infoQuadra = resp
+    })
+  }
 
-  ngOnInit(): void {
+  participarDaQuadra(){
+    this.infoQuadraService.inserirUsuarioNaInfoQuadra(this.infoQuadra.id, environment.id).subscribe((resp: InfoQuadra)=>{
+      this.infoQuadra = resp;
+      alert('Você esta participando dessa quadra!');
+    })
   }
 
 }

@@ -28,20 +28,13 @@
                             <h5>Até: {{ infoQuadra.horaFim }}</h5>                          
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center mt-5 mb-5">
-                        <div class="col-md-10">
-                            <h3 class="title-confirm-style">Quer mesmo sair da quadra??</h3>
-                            <button type="button" class="btn btn-outline-info botao" (click)="sairDaInfoQuadra()">Confirmar</button>
-                            <button type="button" class="btn btn-outline-danger" routerLink='/procurar-quadras'>Cancelar</button>
-                        </div>  
-                    </div>
                 </div>
             </div>
             <div class="col-md-3 border-right">
                 <div class="row mt-5">
                     <div class="col-md-12">
                         <div class="card quadra-style" style="width: 13rem;">
-                            <img class="card-img-top border" [src]=" infoQuadra.quadra.imagem " >
+                            <img class="card-img-top border" src="{{ infoQuadra.quadra.imagem }}" >
                             <div class="card-body">
                               <h5 class="card-title">{{ infoQuadra.quadra.nome }}</h5>
                               <p class="card-text">{{ infoQuadra.quadra.modalidade }}</p>
@@ -59,6 +52,7 @@
                 <hr>
             </div>
         </div>
-        <div class="row mt-3"></div>
+        <div class="row mt-3">
+        </div>
     </div>  
 </body>

@@ -12,6 +12,8 @@ import { SairQuadraComponent } from './sair-quadra/sair-quadra.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ListarHorarioQuadraComponent } from './listar-horario-quadra/listar-horario-quadra.component';
+import { UnidadeInfoQuadraComponent } from './unidade-info-quadra/unidade-info-quadra.component';
+
 
 
 
@@ -22,7 +24,8 @@ import { ListarHorarioQuadraComponent } from './listar-horario-quadra/listar-hor
     AtualizarHorarioQuadraComponent,
     ExcluirHorarioQuadraComponent,
     SairQuadraComponent,
-    ListarHorarioQuadraComponent
+    ListarHorarioQuadraComponent,
+    UnidadeInfoQuadraComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,8 @@ import { ListarHorarioQuadraComponent } from './listar-horario-quadra/listar-hor
     AtualizarHorarioQuadraComponent,
     ExcluirHorarioQuadraComponent,
     SairQuadraComponent,
-    ListarHorarioQuadraComponent
+    ListarHorarioQuadraComponent,
+    UnidadeInfoQuadraComponent
   ]
 })
 export class InfoQuadraModule { }

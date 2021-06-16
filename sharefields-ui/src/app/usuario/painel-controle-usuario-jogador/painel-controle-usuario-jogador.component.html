@@ -27,7 +27,8 @@
                                 <td>{{ item.horaFim }}</td>
                                 <td class="d-flex justify-content-end">
                                     <button class="btn btn-outline-danger botao" [routerLink]="['/sair-info-quadra', item.id]">Sair</button>
-                                    <button class="btn btn-outline-info" [routerLink]="['/detalhe-quadra', item.quadra.id]">Ver quadra</button>
+                                    <button class="btn btn-outline-info botao" [routerLink]="['/detalhe-quadra', item.quadra.id]">Ver quadra</button>
+                                    <button class="btn btn-outline-warning" [routerLink]="['/detalhe-infoQuadra-visualizar', item.id]">Ver Horário</button>
                                 </td>
                               </tr>
                             </tbody>

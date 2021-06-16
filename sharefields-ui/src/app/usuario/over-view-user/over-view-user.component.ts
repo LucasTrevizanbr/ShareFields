@@ -37,7 +37,7 @@ export class OverViewUserComponent implements OnInit {
     }else{
       this.rotaPainelControle = "/painel-contole-jogador"
     } 
-
   }
+  
 
 }

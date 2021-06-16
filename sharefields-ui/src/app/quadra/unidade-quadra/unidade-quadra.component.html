@@ -17,7 +17,7 @@
                     <div class="col-md-5 bg-columns">
                         <div class="row">
                             <div class="col-md-12 text-center horarios-style mb-1">
-                                <h5 class="mt-1">Horários da Quadra</h5>
+                                <h5 class="mt-1">Horários da Quadra/ Total: {{ qtdInfoQuadra }}</h5>
                             </div>
                         </div>
                         <div class="row">
@@ -32,7 +32,7 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      <tr class="trow-color" *ngFor="let item of quadra.infoQuadra">
+                                      <tr class="trow-color" *ngFor="let item of quadra.infoQuadra | slice:0:2">
                                         <th scope="row">{{ item.dataDisponivel}}</th>
                                         <td>{{ item.horaInicio }}</td>
                                         <td>{{ item.horaFim }}</td>

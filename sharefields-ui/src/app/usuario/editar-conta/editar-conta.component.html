@@ -1,37 +1,49 @@
 <body class="default-style">
     <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-7 mt-5 mb-5  justify-content-center">
-                <h1 class="text-center">Atualizar informações</h1>
-                <form class="form-style">
-                    <div class="form-group row">
-                      <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputNome" placeholder="Digite seu nome">
-                      </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 mt-5 mb-5">
+            <h1 class="text-center">Atualizar informações</h1>
+            <form class="form-style">
+                <div class="form-group row">
+                  <label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
+                  <div class="col-sm-10">
+                    <input [(ngModel)]='user.nome' name="nome"  type="nome" class="form-control" id="inputNome" placeholder="Digite seu nome" >
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputApelido" class="col-sm-2 col-form-label">Apelido</label>
+                  <div class="col-sm-10">
+                    <input [(ngModel)]="user.apelido" name="apelido" type="apelido" class="form-control" id="inputApelido" placeholder="Digite seu apelido">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputUrlImage" class="col-sm-2 col-form-label">Avatar</label>
+                    <div class="col-sm-10">
+                      <input [(ngModel)]="user.avatar" name="avatar" type="UrlImage" class="form-control" id="inputUrlImage" placeholder="URL da sua imagem de perfil">
                     </div>
-                    <div class="form-group row">
-                      <label for="inputApelido" class="col-sm-2 col-form-label">Apelido</label>
-                      <div class="col-sm-10">
-                        <input type="apelido" class="form-control" id="inputApelido" placeholder="Digite seu apelido">
-                      </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputSenha" class="col-sm-2 col-form-label">Senha</label>
+                    <div class="col-sm-10">
+                      <input (input)='confirmarSenha($event)' name="senha" type="password" class="form-control" id="inputSenha" placeholder="Digite sua senha">
                     </div>
-                    <div class="form-group row">
-                        <label for="inputUrlImage" class="col-sm-2 col-form-label">Avatar</label>
-                        <div class="col-sm-10">
-                          <input type="UrlImage" class="form-control" id="inputUrlImage" placeholder="URL da sua imagem de perfil">
-                        </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputConfirmaSenha" class="col-sm-2 col-form-label">Confirme</label>
+                    <div class="col-sm-10">
+                      <input [(ngModel)]="user.senha" name="autenticarSenha" type="password" class="form-control" id="inputConfirmaSenha" placeholder="Digite sua senha novamente">
                     </div>
-                    <div class="form-group row">
-                      <div class="col-sm-10">
-                        <button type="submit" class="btn btn-outline-success">Atualizar</button>
-                      </div>
-                    </div>
-                  </form>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-outline-success" (click)='atualizar()'>Atualizar</button>
+                  </div>
+                </div>
+              </form>
             </div>
             <div class="col-md-2"></div>
-            <div class="col-md-1 align-self-end">
+            <div class="col-md-1 align-self-center">
                 <app-nav-lateral></app-nav-lateral>
             </div>
         </div>

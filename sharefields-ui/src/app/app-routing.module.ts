@@ -6,6 +6,7 @@ import { ListarHorarioQuadraComponent } from './info-quadra/listar-horario-quadr
 import { NovoHorarioQuadraComponent } from './info-quadra/novo-horario-quadra/novo-horario-quadra.component';
 import { ParticiparQuadraComponent } from './info-quadra/participar-quadra/participar-quadra.component';
 import { SairQuadraComponent } from './info-quadra/sair-quadra/sair-quadra.component';
+import { UnidadeInfoQuadraComponent } from './info-quadra/unidade-info-quadra/unidade-info-quadra.component';
 import { AtualizarQuadraComponent } from './quadra/atualizar-quadra/atualizar-quadra.component';
 
 
@@ -16,6 +17,7 @@ import { UnidadeQuadraComponent } from './quadra/unidade-quadra/unidade-quadra.c
 import { HomeComponent } from './raiz/home/home.component';
 import { SobreComponent } from './raiz/sobre/sobre.component';
 import { CadastroComponent } from './usuario/cadastro/cadastro.component';
+import { EditarContaComponent } from './usuario/editar-conta/editar-conta.component';
 import { LoginComponent } from './usuario/login/login.component';
 import { PainelControleUsuarioJogadorComponent } from './usuario/painel-controle-usuario-jogador/painel-controle-usuario-jogador.component';
 import { PainelControleUsuarioMqComponent } from './usuario/painel-controle-usuario-mq/painel-controle-usuario-mq.component';
@@ -40,9 +42,11 @@ const routes: Routes = [
   {path:'detalhe-infoQuadra/:id', component: ParticiparQuadraComponent},
   {path:'todos-horarios-quadra/:id', component:ListarHorarioQuadraComponent},
   {path:'sair-info-quadra/:id', component: SairQuadraComponent},
+  {path:'detalhe-infoQuadra-visualizar/:id', component: UnidadeInfoQuadraComponent},
 
   {path:'painel-controle-mq', component: PainelControleUsuarioMqComponent},
-  {path:'painel-contole-jogador', component: PainelControleUsuarioJogadorComponent}
+  {path:'painel-contole-jogador', component: PainelControleUsuarioJogadorComponent},
+  {path:'editar-usuario', component: EditarContaComponent}
 ];
 
 @NgModule({

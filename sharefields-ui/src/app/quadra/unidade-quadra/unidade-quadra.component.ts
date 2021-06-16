@@ -12,6 +12,8 @@ import { Quadra } from 'src/app/model/Quadra';
 export class UnidadeQuadraComponent implements OnInit {
 
   quadra: Quadra = new Quadra();
+  qtdInfoQuadra:number
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +36,7 @@ export class UnidadeQuadraComponent implements OnInit {
   acharQuadraPorID(id: number){
     this.quadraService.buscarQuadraPorId(id).subscribe((resp: Quadra)=>{
       this.quadra = resp;
+      this.qtdInfoQuadra = this.quadra.infoQuadra.length;
     })
   }
 

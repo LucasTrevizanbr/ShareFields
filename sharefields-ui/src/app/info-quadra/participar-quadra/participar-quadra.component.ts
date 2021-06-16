@@ -12,6 +12,8 @@ import { environment } from 'src/environments/environment.prod';
 export class ParticiparQuadraComponent implements OnInit {
   
   infoQuadra: InfoQuadra = new InfoQuadra();
+  qtdJogadoresNaInfo: number;
+  qtdJogadoresMax: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +35,9 @@ export class ParticiparQuadraComponent implements OnInit {
 
   acharInfoQuadraPorID(id: number){
     this.infoQuadraService.procurarInfoQuadraPorId(id).subscribe((resp: InfoQuadra)=>{
-      this.infoQuadra = resp
+      this.infoQuadra = resp;
+      this.qtdJogadoresMax = this.infoQuadra.quadra.qtdJogadoresMax;
+      this.qtdJogadoresNaInfo = this.infoQuadra.jogadores.length;
     })
   }
 

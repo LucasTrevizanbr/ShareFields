@@ -15,9 +15,10 @@ import { InfoQuadraModule } from './info-quadra/info-quadra.module';
 
 
 
+
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
   ],
   imports: [
     BrowserModule,

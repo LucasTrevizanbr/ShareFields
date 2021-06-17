@@ -7,6 +7,7 @@ import { environment } from './../../../environments/environment.prod';
 import { Quadra } from 'src/app/model/Quadra';
 import { Usuario } from './../../model/Usuario';
 import { AuthService } from 'src/app/service/auth.service';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-cadastro-quadra',
@@ -23,14 +24,15 @@ export class CadastroQuadraComponent implements OnInit {
   constructor(
     private router: Router,
     private quadraService : QuadraService,
-    private authService : AuthService
+    private authService : AuthService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
   }
@@ -45,14 +47,17 @@ export class CadastroQuadraComponent implements OnInit {
 
     this.usuario.id = this.idUsuario
     this.quadra.proprietarioQuadra = this.usuario
-
-
+ 
     this.quadraService.cadastrarQuadra(this.quadra).subscribe((resp : Quadra)=>{
       this.quadra = resp;
-      alert("Quadra cadastrada com sucesso!")
+      this.alerta.showAlertSuccess("Quadra cadastrada com sucesso!")
       this.quadra = new Quadra()
-    })
-    
+    }, erro =>{
+      console.log(`Erro cod: ${erro.status}`)
+      if(erro.status===500){
+       this.alerta.showAlertDanger("Preencha todos os campos antes de cadastrar");
+      }
+    })      
   }
 
   cancelar(){

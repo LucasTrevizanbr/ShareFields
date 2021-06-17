@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -16,14 +17,15 @@ export class EditarContaComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -44,12 +46,12 @@ export class EditarContaComponent implements OnInit {
     this.user.disponibilizadorDeQuadra = environment.disponibilizadorDeQuadra;
 
     if(this.user.senha !== this.confirmeSenha){
-      alert('Sua senhas não são iguais!!')
+      this.alerta.showAlertInfo('Sua senhas não são iguais!!')
 
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario)=>{
         this.user = resp;
-        alert('Usuário atualizado com sucesso!, faça login novamente');
+        this.alerta.showAlertSuccess('Usuário atualizado com sucesso!, faça login novamente');
         environment.apelido = '';
         environment.avatar = '';
         environment.id = 0;

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuadraService } from 'src/app/service/quadra.service';
 import { Quadra } from 'src/app/model/Quadra';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-atualizar-quadra',
@@ -16,14 +17,15 @@ export class AtualizarQuadraComponent implements OnInit {
   constructor(
     private router: Router,
     private quadraService: QuadraService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -40,7 +42,7 @@ export class AtualizarQuadraComponent implements OnInit {
   atualizarQuadra(){
     this.quadraService.atualizarQuadra(this.quadra).subscribe((resp: Quadra)=>{
       this.quadra = resp;
-      alert("Quadra Atualizada com sucesso!");
+      this.alerta.showAlertSuccess("Quadra Atualizada com sucesso!");
       this.router.navigate(['/painel-controle-mq']);
     })
   }

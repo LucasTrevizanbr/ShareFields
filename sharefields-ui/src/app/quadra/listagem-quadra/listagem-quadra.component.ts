@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuadraService } from 'src/app/service/quadra.service';
 import { Quadra } from 'src/app/model/Quadra';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-listagem-quadra',
@@ -15,16 +16,22 @@ export class ListagemQuadraComponent implements OnInit {
 
   listaQuadra : Quadra[];
 
+  nomeQuadra: string;
+  modalidadeQuadra: string;
+  cidadeQuadra: string;
+
+
   constructor(
     private router: Router,
-    private quadraService: QuadraService
+    private quadraService: QuadraService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -35,6 +42,36 @@ export class ListagemQuadraComponent implements OnInit {
      this.quadraService.buscarTodasAsQuadras(this.quadra).subscribe((resp: Quadra[])=>{
         this.listaQuadra = resp;
      })
+  }
+
+  acharPorNomeQuadra(){
+    if(this.nomeQuadra == ''){
+      this.buscarTodasAsQuadras();
+    }else{
+      this.quadraService.buscarQuadraPorNome(this.nomeQuadra).subscribe((resp: Quadra[])=>{
+        this.listaQuadra = resp;
+      })
+    }  
+  }
+
+  acharPorNomeModalidade(){
+    if(this.modalidadeQuadra == ''){
+      this.buscarTodasAsQuadras();
+    }else{
+      this.quadraService.buscarQuadraPorModalidade(this.modalidadeQuadra).subscribe((resp: Quadra[])=>{
+        this.listaQuadra = resp;
+      })
+    }
+  }
+
+  acharPorNomeCidade(){
+    if(this.cidadeQuadra == ''){
+      this.buscarTodasAsQuadras();
+    }else{
+      this.quadraService.buscarQuadraPorCidade(this.cidadeQuadra).subscribe((resp: Quadra[])=>{
+        this.listaQuadra = resp;
+      })
+    }
   }
 
 }

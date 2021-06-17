@@ -3,6 +3,7 @@ import { UserLogin } from './../../model/UserLogin';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService : AuthService,
-    private router : Router
+    private router : Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
@@ -32,18 +34,11 @@ export class LoginComponent implements OnInit {
       environment.avatar = this.userLogin.avatar;
       environment.id = this.userLogin.id;
       environment.disponibilizadorDeQuadra = this.userLogin.disponibilizadorDeQuadra;
-
-      console.log(environment.apelido);
-      console.log(environment.token);
-      console.log(environment.nome);
-      console.log(environment.avatar);
-      console.log(environment.id);
-      console.log(environment.disponibilizadorDeQuadra);
-
       this.router.navigate(['/procurar-quadras']);
+      
     }, erro => {
       if(erro.status == 500){
-        alert('Usuário ou senha estão incorretos!');
+        this.alerta.showAlertDanger('Usuário ou senha estão incorretos!');
       }
     }
     )

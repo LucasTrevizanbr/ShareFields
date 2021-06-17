@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -17,7 +18,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router : Router
+    private router : Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
@@ -37,15 +39,19 @@ export class CadastroComponent implements OnInit {
     this.user.disponibilizadorDeQuadra = this.tipoUsuario;
 
     if(this.user.senha !== this.confirmeSenha){
-      alert('Sua senhas não são iguais!!')
-
+      this.alerta.showAlertInfo('Sua senhas não são iguais!!')
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario)=>{
         this.user = resp
         this.router.navigate(['/logar'])
-        alert('Usuário cadastrado com sucesso!')
+        this.alerta.showAlertSuccess('Usuário cadastrado com sucesso!')
+      }, erro =>{
+        console.log(`Erro cod: ${erro.status}`)
+        if(erro.status===500)
+        this.alerta.showAlertDanger("Preencha todos os campos antes de cadastrar");
       })
     }
   }
+
 
 }

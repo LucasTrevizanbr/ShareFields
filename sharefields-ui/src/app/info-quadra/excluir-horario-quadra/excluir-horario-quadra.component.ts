@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoQuadra } from 'src/app/model/InfoQuadra';
 import { InfoQuadraService } from 'src/app/service/info-quadra.service';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-excluir-horario-quadra',
@@ -16,7 +17,8 @@ export class ExcluirHorarioQuadraComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private infoQuadraService: InfoQuadraService ,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) { }
   
 
@@ -24,7 +26,7 @@ export class ExcluirHorarioQuadraComponent implements OnInit {
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -40,7 +42,7 @@ export class ExcluirHorarioQuadraComponent implements OnInit {
 
   excluirInfoQuadra(){
     this.infoQuadraService.deletarInfoQuadra(this.infoQuadra.id).subscribe(()=>{
-      alert('Horário excluido com sucesso!');
+      this.alerta.showAlertSuccess('Horário excluido com sucesso!');
       this.router.navigate(['/painel-controle-mq']);
     })
   }

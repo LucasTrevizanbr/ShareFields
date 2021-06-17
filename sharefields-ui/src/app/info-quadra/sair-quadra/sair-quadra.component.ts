@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { InfoQuadra } from 'src/app/model/InfoQuadra';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { InfoQuadraService } from 'src/app/service/info-quadra.service';
 import { environment } from 'src/environments/environment.prod';
@@ -26,14 +27,15 @@ export class SairQuadraComponent implements OnInit {
     private route: ActivatedRoute,
     private infoQuadraService: InfoQuadraService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -59,7 +61,7 @@ export class SairQuadraComponent implements OnInit {
   sairDaInfoQuadra(){
     this.infoQuadraService.removerUsuarioDaInfoQuadra(this.infoQuadra.id, this.usuario.id).subscribe((resp: InfoQuadra)=>{
       this.infoQuadra = resp;
-      alert('Você saiu do horario de quadra!');
+      this.alerta.showAlertSuccess('Você saiu do horario de quadra!');
       this.router.navigate(['/painel-controle-jogador']);
     })
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { InfoQuadraService } from 'src/app/service/info-quadra.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -18,14 +19,15 @@ export class ParticiparQuadraComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private infoQuadraService: InfoQuadraService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -44,8 +46,8 @@ export class ParticiparQuadraComponent implements OnInit {
   participarDaQuadra(){
     this.infoQuadraService.inserirUsuarioNaInfoQuadra(this.infoQuadra.id, environment.id).subscribe((resp: InfoQuadra)=>{
       this.infoQuadra = resp;
-      alert('Você esta participando dessa quadra!');
-    })
+      this.alerta.showAlertSuccess('Você esta participando dessa quadra!');
+    });
   }
 
 }

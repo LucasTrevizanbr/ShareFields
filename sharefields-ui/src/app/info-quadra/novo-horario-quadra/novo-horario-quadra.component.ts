@@ -5,6 +5,7 @@ import { Quadra } from 'src/app/model/Quadra';
 import { QuadraService } from 'src/app/service/quadra.service';
 import { InfoQuadraService } from 'src/app/service/info-quadra.service';
 import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-novo-horario-quadra',
@@ -21,12 +22,13 @@ export class NovoHorarioQuadraComponent implements OnInit {
     private route: ActivatedRoute,
     private quadraService: QuadraService,
     private router: Router,
-    private infoQuadraService: InfoQuadraService
+    private infoQuadraService: InfoQuadraService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -46,8 +48,13 @@ export class NovoHorarioQuadraComponent implements OnInit {
 
     this.infoQuadraService.criarInfoQuadra(this.infoQuadra).subscribe((resp: InfoQuadra)=>{
       this.infoQuadra = resp;
-      alert('Novo Horário de quadra criado!')
+      this.alerta.showAlertSuccess('Novo Horário de quadra criado!')
       this.router.navigate(['/painel-controle-mq'])
+    }, erro =>{
+      console.log(`Erro cod: ${erro.status}`)
+      if(erro.status===500){
+       this.alerta.showAlertDanger("Preencha todos os campos antes de cadastrar");
+      }
     })  
   }
 

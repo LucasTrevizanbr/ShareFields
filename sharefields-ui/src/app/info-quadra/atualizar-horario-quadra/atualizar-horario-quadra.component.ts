@@ -5,6 +5,7 @@ import { InfoQuadraService } from 'src/app/service/info-quadra.service';
 
 
 import { InfoQuadra } from 'src/app/model/InfoQuadra';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 
 
@@ -21,14 +22,15 @@ export class AtualizarHorarioQuadraComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private infoQuadraService: InfoQuadraService ,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0);
 
     if(environment.token ==''){
-      alert('Sua seção expirou, faça login novamente!')
+      this.alerta.showAlertInfo('Sua seção expirou, faça login novamente!')
       this.router.navigate(['/logar'])
     };
 
@@ -45,7 +47,7 @@ export class AtualizarHorarioQuadraComponent implements OnInit {
   atualizarQuadra(){
     this.infoQuadraService.atualizarInfoQuadra(this.infoQuadra).subscribe((resp: InfoQuadra)=>{
       this.infoQuadra = resp;
-      alert('Horário Atualizado com sucesso');
+      this.alerta.showAlertSuccess('Horário Atualizado com sucesso');
       this.infoQuadra = new InfoQuadra();
       this.router.navigate(['/painel-controle-mq'])
     })

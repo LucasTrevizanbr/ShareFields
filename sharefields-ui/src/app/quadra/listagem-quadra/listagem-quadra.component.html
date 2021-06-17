@@ -28,6 +28,15 @@
                         <div class="tab-content" id="nav-tabContent">
                               
                                 <div class="tab-pane fade show active" id="nav-todasQuadras" role="tabpanel" aria-labelledby="nav-todasQuadras">
+
+                                    <div class="row d-flex justify-content-center mt-1 mb-1">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" name="buscaPorNome" id="nome" placeholder="Digite o nome da quadra aqui" [(ngModel)]='nomeQuadra' (keyup)='acharPorNomeQuadra()'>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="card-group w-100">
                                         <div class="col-md-4" *ngFor="let item of listaQuadra">
                                             <div class="card cards-style">
@@ -42,7 +51,16 @@
                                     </div>
                                 </div>
                                 
-                                <div class="tab-pane fade" id="nav-modalidade" role="tabpanel" aria-labelledby="nav-modalidade">Modalidade
+                                <div class="tab-pane fade" id="nav-modalidade" role="tabpanel" aria-labelledby="nav-modalidade">
+
+                                    <div class="row d-flex justify-content-center mt-1 mb-1">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" name="buscaPorModalidade" id="modalidade" placeholder="Digite a modalidade que você procura" [(ngModel)]='modalidadeQuadra' (keyup)='acharPorNomeModalidade()'>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="card-group w-100">
                                         <div class="col-md-4" *ngFor="let item of listaQuadra">
                                             <div class="card cards-style">
@@ -57,7 +75,16 @@
                                     </div>
                                 </div>
         
-                                <div class="tab-pane fade" id="nav-cidade" role="tabpanel" aria-labelledby="nav-cidade">Cidade
+                                <div class="tab-pane fade" id="nav-cidade" role="tabpanel" aria-labelledby="nav-cidade">
+
+                                    <div class="row d-flex justify-content-center mt-1 mb-1">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" name="buscaPorCidade" id="cidade" placeholder="Digite a cidade em que você procura" [(ngModel)]='cidadeQuadra' (keyup)='acharPorNomeCidade()'>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="card-group w-100">
                                         <div class="col-md-4" *ngFor="let item of listaQuadra">
                                             <div class="card cards-style">

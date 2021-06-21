@@ -17,8 +17,6 @@ export class PainelControleUsuarioMqComponent implements OnInit {
 
   nomeQuadra: string;
   listaQuadra: Quadra[];
-  
-  
 
   constructor(
     private router: Router,

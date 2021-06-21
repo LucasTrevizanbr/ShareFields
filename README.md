@@ -1,5 +1,7 @@
 # ShareFields
 
+<p>A ideia principal da aplicação é ser uma rede social de compartilhamento de quadras onde mestres de quadra disponibilizam suas quadras com horários e datas disponiveis e os usuários que são jogadores se inscrevem nesses horários.
+
 <p>Para rodar a o back-end da aplicação de maneira dockerizada utilize o comando "docker-compose up -d --build"  no diretório raiz, o comando ira iniciar nosso docker-compose que vai construir os containers.
 
 # Documentação
